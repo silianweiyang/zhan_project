@@ -1,0 +1,123 @@
+<div id="dataSourceInfo">
+    <input type="hidden" id="taskId"/>
+    <input type="hidden" id="divModel"/>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0" style="width: 80px;"><em
+                        class="color_red">*</em>任务名称:</label>
+                <div class="col-xs-8">
+                    <input class="k-textbox" id="data_taskName" name="taskName" maxlength="20"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5" >
+            <div class="form-group">
+                <label  class="control-label col-xs-2 p0" style="width: 80px;"><em
+                        class="color_red">*</em>采集方式:</label>
+                <div class="col-xs-8" id="panelgatherType">
+                    <input id="data_gatherType"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-11">
+            <div class="form-group">
+                <label  class="control-label col-xs-2 p0" style="width: 80px;"><em class="color_red">*</em>选择资源:</label>
+                <div class="col-xs-10" style="max-width: 550px">
+
+                    <input type="hidden" id="data_resId"/>
+                    <div class="input-group">
+                        <input class="form-control" id="data_resName"
+                               placeholder="请选择资源" onfocus=this.blur(); />
+                        <span id="appList_resSearch" class="input-group-addon"><i
+                                class="fa fa-search search"> </i>
+                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;"><em class="color_red">*</em>执行方式:</label>
+                <div class="col-xs-8" id="panelrunType">
+                    <input id="data_runType"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;"><em class="color_red">*</em>采集频率:</label>
+                <div class="col-xs-8">
+                    <input id="data_gatherFrequency" name="gatherFrequency" class="k-textbox" maxlength="19"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;"><em class="color_red">*</em>开始时间:</label>
+                <div class="col-xs-8" id="panelBeginTime">
+                    <input id="data_beginTime" name="beginTime" style="width: 100%;"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;"><em class="color_red">*</em>截止时间:</label>
+                <div class="col-xs-8" id="panelEndTime">
+                    <input id="data_endTime" name="endTime" style="width: 100%;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;">任务状态:</label>
+                <div class="col-xs-8">
+                    <input id="data_taskStatus" class="k-textbox" value="0" READONLY="readonly"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;">运行状态:</label>
+                <div class="col-xs-8">
+                    <input id="data_taskRunStatus" class="k-textbox" READONLY="readonly" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;">采集频率示例:</label>
+                <div class="col-xs-8">
+                    <span>每年:    ****-10-10 12:12:00</span><br/>
+                    <span>每月:    ****-**-10 12:12:00</span><br/>
+                    <span>每日:    ****-**-** 12:12:00</span><br/>
+                    <span>一次性:  2018-10-10 12:12:00</span><br/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Button组-->
+<div class="col-md-12 col-xs-12 p10" align="center">
+    <button type="button" opt="submit" id="submit" class="btn btn_delete btn_delete1 btn_delete2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>提交
+    </button>
+    <button type="button" opt="cancel" id="cancel" id="serverMgrDetail_cancel" class="btn btn_pre btn_pre1 btn_pre2">
+        <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+    </button>
+</div>
+
+<div  id="resPanel"></div>

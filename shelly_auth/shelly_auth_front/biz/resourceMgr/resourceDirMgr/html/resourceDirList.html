@@ -1,0 +1,78 @@
+<div id="resourceDirList">
+    <div class="col-lg-3 search-owe">
+        <div class="input-group">
+            <input class="form-control" id="resourceDirList_dirName" name="dirName" placeholder="请输入目录名称"/>
+            <span id="resourceDirList_dirSearch" class="input-group-addon" style="cursor: pointer;"><i class="fa fa-search search"></i></span>
+        </div>
+        <div class="col-xs-12 tree-owe" id="resourceDir_tree">
+
+        </div>
+    </div>
+    <div class="col-lg-9 search-owe">
+        <div class="form-horizontal col-xs-4 col-lg-4">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">资源名称:</label>
+                <div class="col-xs-7">
+                    <input id="resourceDirListSearch_dirName" class="k-textbox" placeholder="请输入资源目录名称"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-4">
+            <div class="form-group">
+                <label class="control-label col-xs-4  p0">状态:</label>
+                <div class="col-xs-8">
+                    <input id="resourceDirListSearch_dirStatus"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-4">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="resourceDirList_searchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+                <!--<div id="advancedSrhBtn" class="search_tex col-sm-2 p0" style="width: 30%;margin-left: 25px;">
+                    <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;高级搜索&nbsp;&nbsp;
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-9 button-owe">
+        <!--Button组-->
+        <div class="fr">
+         <!--   <button type="button" class="btn btn_add btn_add1 btn_add2" id="resourceDirList_addRootDirBtn">
+                <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>新增根目录
+            </button>-->
+            <button type="button" class="btn btn_add btn_add1 btn_add2" id="resourceDirList_addBtn">
+                <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>新增资源目录
+            </button>
+            <button type="button" class="btn btn_delete btn_check1 btn_delete2" id="resourceDirList_updateBtn">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>修改
+            </button>
+            <button type="button" class="btn btn_delete btn_delete1 btn_delete2" id="resourceDirList_delBtn">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>删除
+            </button>
+            <button type="button" style="display: none;" class="btn btn_delete btn_delete1 btn_delete2" id="resourceDir_updateStatus">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>启用/停用
+            </button>
+            <button type="button" style="display: none;" class="btn btn_delete btn_delete1 btn_delete2" id="resourceDir_detailBtn">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>查看
+            </button>
+        </div>
+
+    </div>
+
+    <!--列表-->
+    <div class="col-lg-9 grid-owe">
+        <div id="resourceDirListGrid"></div>
+        <div id="resourceDirListGridPager"></div>
+    </div>
+    <!-- 新增资源目录弹窗div-->
+    <div id="resourceDir_popup"></div>
+</div>
+<script type="text/javascript">
+    require(["biz/resourceMgr/resourceDirMgr/js/resourceDirList"], function (resourceDirList) {
+        resourceDirList.init();
+    });
+</script>

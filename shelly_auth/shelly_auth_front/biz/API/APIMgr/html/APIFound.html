@@ -1,0 +1,59 @@
+<div id="APIFound">
+    <div class="col-lg-12 search-owe">
+
+        <!--负载、最大并发数、超时时间，参数转换、流量控制（就是最大并发数）在发布页面， 授权页面选择是否权限认证、是否安全认证 都是单选-->
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">发布应用名称:</label>
+                <div class="col-xs-8">
+                    <input id="APIFound_serverName"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">发布应用归属:</label>
+                <div class="col-xs-8">
+                    <input type="hidden" id="APIFound_orgId"/>
+                    <div class="input-group">
+                        <input class="form-control" id="APIFound_orgName" name="orgName"
+                               placeholder="请选择应用归属" onfocus=this.blur(); />
+                       <span id="APIFound_orgSearch" class="input-group-addon"><i
+                               class="fa fa-search search"> </i>
+                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4  p0">发布应用描述:</label>
+                <div class="col-xs-8">
+                    <input id="APIFound_desc" placeholder="请输入应用描述" class="k-textbox"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4 col-md-4 col-lg-3">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="APIFound_SearchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--列表-->
+    <div class="col-lg-12 grid-owe">
+        <div id="APIFoundGrid"></div>
+        <div id="APIFoundGridPager"></div>
+    </div>
+
+    <!--弹出窗口-->
+    <div id="APIFound_orderPopup"></div>
+</div>
+<script type="text/javascript">
+    require(["biz/API/APIMgr/js/APIFound"], function (list) {
+        list.init();
+    });
+</script>

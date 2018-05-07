@@ -1,0 +1,35 @@
+<div id="serverMgrUpload">
+    <input type="hidden" id="serverMgrUpload_serverId"/>
+    <input type="hidden" id="serverMgrUpload_serviceName"/>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-12 col-lg-12">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0">文档上传:</label>
+                    <div class="input-group col-xs-8" style="padding:0px 15px;">
+                        <input id="serverMgrUpload_files" class="k-textbox" readonly="readonly"  style="width: 80%" placeholder="支持rar、zip格式的文档"/>
+                        <span class="btn btn-success fileinput-button" style="border-color: #1b5a7a;background-color: #1b5a7a;border-radius: 0px;padding:5px 12px;">
+                        <span>请选择</span>
+                        <input id="serverMgrUpload_fileupload" type="file" name="file"/>
+                    </span>
+                        <span id="serverMgrUpload_result" class="files"></span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Button组-->
+<div class="col-md-12 col-xs-12 p10" align="center">
+    <button type="button"  id="serverMgrUpload_save" class="btn btn_pre btn_pre1 btn_pre2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>保存并关闭
+    </button>
+    <button type="button" opt="cancel" id="serverMgrUpload_cancel" class="btn btn_cancel btn_cancel1 btn_cancel2">
+        <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_blue p3"></i>取消
+    </button>
+</div>
+
+<script type="text/javascript">
+    require(["biz/API/serverMgr/js/serverUpload_popup"], function (serverUpload_popup) {
+        serverUpload_popup.init();
+    });
+</script>

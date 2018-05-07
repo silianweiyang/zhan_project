@@ -1,0 +1,46 @@
+<style>
+    #descApiInparamSetting_popup .k-tabstrip>.k-content{
+        padding:0px;
+    }
+    #descApiInparamSetting_popup .table>tbody>tr.success>td{
+        background-color: inherit;
+        color:#000;
+    }
+</style>
+<div id="descApiInparamSetting_popup" class="col-xs-12 p0" style="max-width: 900px;">
+    <div class="col-xs-11"><h3 class="title_service fl" style="margin-top: 0px;">常量转换</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-xs-11" style="padding-left: 30px;">
+        <div id="descApiInparamSetting_inConsGrid" style="width: 820px;"></div>
+        <button id="descApiInparamSetting_inConsGrid_dataAdd" class="add_btn fl">
+            <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+        </button>
+    </div>
+    <div class="col-xs-11" style="margin-top: 20px;"><h3 class="title_service fl" style="margin-top: 0px;">参数转换</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-xs-11 fl">
+        <lable class="control-label col-xs-1 "><em class="color_red">*</em>转换方式：</lable>
+        <div class="col-xs-7 p0">
+            <lable class="control-label"><input name="descApiInparamSetting_inParamType" type="radio" value="replace" checked style="vertical-align: bottom"/>替换</lable>
+            <lable class="control-label"><input name="descApiInparamSetting_inParamType" type="radio" value="create" style="vertical-align: bottom"/>重建</lable>
+        </div>
+    </div>
+    <div class="col-xs-11" style="padding-left: 30px;margin-top: 5px;">
+        <div id="descApiInparamSetting_inParamGrid" style="width: 820px;"></div>
+        <button id="descApiInparamSetting_inParamGrid_dataAdd" class="add_btn fl">
+            <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+        </button>
+    </div>
+
+    <div class="col-xs-11 p10" align="center" id="saveButton">
+        <button id="descApiInparamSetting_cancelBtn" opt="cancel" type="button"  class="btn btn_cancel btn_cancel1 btn_cancel2">
+            <i class="fa fa-arrow-circle-o-up fa_icon1 fa_icon_white fa_icon_pink p3"></i>取消
+        </button>
+        &nbsp;&nbsp;
+        <button id="descApiInparamSetting_saveBtn" type="button" opt="submit" class="btn btn_pre btn_pre1 btn_pre2">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>确定
+        </button>
+    </div>
+</div>

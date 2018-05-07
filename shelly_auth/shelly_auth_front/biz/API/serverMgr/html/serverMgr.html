@@ -1,0 +1,106 @@
+<style>
+    #serverMgr .monitor_service_tilte h3 {
+        display: block;
+        line-height: 30px;
+        background: #f3f3f3;
+        width: 100%;
+        font-size: 14px;
+        padding: 0px 10px;
+        border: 1px solid white;
+    }
+</style>
+<div id="serverMgr">
+    <input type="hidden" id="serverMgr_isAdd"/>
+    <input type="hidden" id="menuCode"/>
+    <input type="hidden" id="serverMgr_serverCode"/>
+    <input type="hidden" id="search_serverList_name"/>
+    <input type="hidden" id="search_serverList_orgId"/>
+    <input type="hidden" id="search_serverList_orgName"/>
+    <input type="hidden" id="search_serverList_desc"/>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" style="margin-top: 20px;">
+        <div class="form-horizontal col-xs-4 col-lg-5 mt10">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0"><em class="color_red">*</em>应用归属:</label>
+                <div class="col-xs-10">
+                    <input type="hidden" id="serverMgr_orgId"/>
+                    <div class="input-group">
+                        <input class="form-control" id="serverMgr_orgName"
+                               name="orgName"
+                               placeholder="请选择应用归属" onfocus=this.blur(); />
+                        <span id="serverMgr_orgSearch" class="input-group-addon"><i
+                                class="fa fa-search search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-5 mt10">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0"><em class="color_red">*</em>应用名称:</label>
+                <div class="col-xs-10">
+                    <input type="text" class="k-textbox" id="serverMgr_serverName" maxlength="20" name="serverMgr_serverName"
+                           placeholder="请输入应用名称" validate="[required]" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0">
+        <div class="form-horizontal col-xs-4 col-lg-5 mt10">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0"><em class="color_red">*</em>身份编码:</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" id="serverMgr_identifyCode" />
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5 mt10">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0"><em class="color_red">*</em>密钥:</label>
+                <div class="input-group col-xs-10" id="serverMgr-div" style="padding:0px 15px;">
+                    <input class="form-control" id="serverMgr_userPassword"
+                           name="orgName" />
+                    <span id="serverMgr_resetPassword" class="input-group-addon" style="cursor: pointer">重置密钥</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0">
+        <div class="form-horizontal col-xs-4 col-lg-5 mt10">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0">应用描述:</label>
+                <div class="col-xs-10">
+                    <textarea class="k-textbox" id="serverMgr_serverDesc" placeholder="请输入应用描述" maxlength="200"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5 mt10">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0">文档上传:</label>
+                <div class="input-group col-xs-10" style="padding:0px 15px;">
+                    <input id="serverMgr_files" class="k-textbox" readonly="readonly"  style="width: 82%" placeholder="支持rar、zip格式的文档"/>
+                    <span class="btn btn-success fileinput-button" style="border-color: #1b5a7a;background-color: #1b5a7a;border-radius: 0px;padding:5px 12px;">
+                        <span>请选择</span>
+                        <input id="serverMgr_fileupload" type="file" name="file" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Button组-->
+<div class="col-md-12 col-xs-12 p10" align="center">
+    <button type="button" id="serverMgr_cancel" class="btn btn_cancel btn_cancel1 btn_cancel2">
+        <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_blue p3"></i>取消
+    </button>
+    &nbsp;&nbsp;
+    <button type="button" id="serverMgr_save" class="btn btn_pre btn_pre1 btn_pre2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>保存并关闭
+    </button>
+</div>
+<script type="text/javascript">
+    require(["biz/API/serverMgr/js/serverMgr"], function (serverMgr) {
+        serverMgr.init();
+    });
+</script>

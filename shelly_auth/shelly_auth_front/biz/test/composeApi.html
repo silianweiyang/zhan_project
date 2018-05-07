@@ -1,0 +1,227 @@
+<link rel="stylesheet" type="text/css" href="lib/jquery.flowchart/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="lib/jquery.flowchart/jquery.flowchart.css">
+<style>
+    #composeApiMgr .k-tabstrip>.k-content{
+        padding:0px;
+    }
+    #composeApiMgr .table>tbody>tr.success>td{
+        background-color: inherit;
+        color:#000;
+    }
+</style>
+<div class="row" id="composeApiMgr">
+    <input type="hidden" id="composeApiMgr_requestParamConvert"/>
+    <input type="hidden" id="composeApiMgr_responseParamConvert"/>
+    <input type="hidden" id="composeApiMgr_waitTimeLimit"/>
+    <input type="hidden" id="composeApiMgr_concurrencyLimit"/>
+    <input type="hidden" id="composeApiMgr_isAddHis"/>
+    <input type="hidden" id="composeApiMgr_isAdd"/>
+    <input type="hidden" id="composeApiMgr_apiId"/>
+    <input type="hidden" id="composeApiMgr_userCode"/>
+    <input type="hidden" id="composeApiMgr_soapDemo"/>
+    <div class="col-lg-12 col-xs-12" id="composeApiMgr_baseInfoTitle" style="margin-top: 20px;"><h3 class="title_service fl" style="margin-top: 0px">基本信息</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="composeApiMgr_baseInfoContent">
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>应用名称:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_serverName" />
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>API名称:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_name" name="composeApiMgr_name" class="k-textbox" placeholder="请输入API名称" maxlength="50" validate="[required]"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3" id="composeApiMgr_state_div">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>状态:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_state"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3" style="display: none">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>是否公开:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_ispublic"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">API描述:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_desc" class="k-textbox" placeholder="请输入API描述" maxlength="200"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-xs-12" id="composeApiMgr_requestTitle"  ><div class="title_bg"><h3 class="title_service1 fl" style="margin-bottom: 5px;margin-top: 0px;">请求信息<div class=" instruction_t fr">
+        <div class="instruction_box"><a href="javascript:void(0)"><i class="fa fa-info-circle  mt5"></i><div class="carryOut">
+            <li><strong>API路径</strong>：必须以/开头，例如:/a/b/c</li>
+            <li><strong>请求方法</strong>：<ul style="margin-bottom: 0px;">
+                <li>GET：请求参数以key=value结构以”?”拼接于URL地址之后，多个参数以”&”拼接。响应参数存在于响应Body体，Body协议指的是响应参数的数据结构。</li>
+                <li>DELETE、POST、PUT：请求参数与响应参数都存在于Body体，Body协议指的是请求参数及响应参数的数据结构。</li>
+            </ul>
+            </li>
+            <li><strong>Body协议</strong>：<ul style="margin-bottom: 0px;">
+                <li>JSON：需满足json结构规则，参数根路径必须为json对象，不支持根路径为json数组的json参数。</li>
+                <li>XML：需满足xml结构规则，支持多个xml对象参数。转义的xml符号以字符串进行解析。</li>
+                <li>SOAP：需满足soap结构规则，转义的xml符号以字符串进行解析。</li>
+                <li>XML_TEXT：需满足xml结构规则，支持多个xml对象参数。转义的xml符号以xml结构进行解析。</li>
+                <li>SOAP_TEXT：需满足soap结构规则，转义的xml符号以xml结构进行解析。</li>
+                <li>TEXT：无结构字符串。</li>
+            </ul>
+            </li>
+        </div></a></div>
+    </div></h3></div>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="composeApiMgr_requestContent1">
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>传输协议:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_transProto"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3" style="display: none">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>IP:</label>
+                <div class="col-xs-8">
+                    <input type="hidden" id="composeApiMgr_apiaddrid"/>
+                    <input id="composeApiMgr_ip" class="k-textbox" readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3" style="display: none">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>端口:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_port" class="k-textbox" readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>API路径:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_path" name="composeApiMgr_path" class="k-textbox" placeholder="请输入API路径" maxlength="100" validate="[required,URL]"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>请求方法:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_method"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>Body协议:</label>
+                <div class="col-xs-8">
+                    <input id="composeApiMgr_contentProto"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="composeApiMgr_requestContent2">
+        <div class="form-horizontal col-sm-4  col-md-5 col-lg-12">
+            <div class="form-group">
+                <label class="control-label col-sm-1 col-md-1 p0">参数样例:</label>
+                <div class="col-xs-11">
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="composeApiMgr_inparamDemoTitle"><h3 class="title_service fl" style="margin: 0px;font-size: 12px">入参样例<i class="fa fa-caret-up fa_icon" style="float: right;font-size:1.4rem;padding: 8px 5px;"></i></h3></div>
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="composeApiMgr_inparamDemoContent">
+                        <textarea style="-webkit-box-shadow:none;box-shadow:none;" id="composeApiMgr_inparamDemo" placeholder='例如:{"id":1,"name":"test"}'  class="form-control shadow_none" rows="8" maxlength="1000"></textarea>
+                    </div>
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="composeApiMgr_outparamDemoTitle"><h3 class="title_service fl" style="margin: 0px;font-size: 12px">出参样例<i class="fa fa-caret-down fa_icon" style="float: right;font-size:1.4rem;padding: 8px 5px;"></i></h3></div>
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="composeApiMgr_outparamDemoContent" style="display: none">
+                        <textarea style="-webkit-box-shadow:none;box-shadow:none;" id="composeApiMgr_outparamDemo" placeholder='例如:{"id":1,"name":"test"}'  class="form-control shadow_none" rows="8" maxlength="1000"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-xs-12 p10" align="center" id="composeApiMgr_nextButton">
+        <button id="composeApiMgr_closeBtn1" type="button" opt="cancel" class="btn btn_pre btn_pre1 btn_pre2" style="margin-right: 30px;">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>取消
+        </button><button id="composeApiMgr_nextBtn" type="button"  class="btn btn_cancel btn_cancel1 btn_cancel2">
+            <i class="fa fa-arrow-circle-o-down fa_icon1 fa_icon_white fa_icon_blue p3"></i>下一步
+        </button>
+    </div>
+
+    <div id="composeApiMgr_bianpai" style="display: none">
+        <div class="col-xs-12" style="margin-top: 10px;">
+            <div class="col-xs-1" style="width: 10%">
+                <span style="display: inline-block; padding: 0px 10px; vertical-align: middle; text-align: center; line-height: 30px; background: #085da5; margin-top: 10px; color: #fff">工具区<div class=" instruction_t fr">
+        <div class="instruction_box"><a href="javascript:void(0)" style="color:#fff;"><i class="fa fa-info-circle  mt5"></i><div class="carryOut" style="text-align: left;color:#337ab7;min-width: 700px;">
+            <li>1、一个完整的流程必须有且只有一个开始和结束节点</li>
+            <li>2、"开始节点"：只有输出连线，并且只能有一个输出连线；<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"结束节点"：只有输入连线，可以有多个输入连线；<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"API节点"：可以有多个输入连线，但只能有一个输出连线；<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"判断节点"：可以有多个输入和输出连线</li>
+            <li>3、流程中所有的节点都必须配置，其中判断节点配置前请确保此节点的所有输出节点已经配置</li>
+        </div></a></div>
+    </div></span><i class="fa fa-caret-right" style=" margin-top: 11px;margin-left: -1px;vertical-align: middle;font-size: 16px;
+    color: #085da5;"></i>
+            </div>
+            <div class="col-xs-10 p0">
+                <label  id="start" class="ovalHor tool-btn tool-btn2">开始</label>
+                <label  id="process" class="rectangle tool-btn tool-btn2">API</label>
+                <label  id="decide" class="diamond tool-btn tool-btn2 mg">判断</label>
+                <label  id="end" class="ovalHor tool-btn tool-btn2">结束</label>
+                <button type="button" class="btn1 del_btn" id="composeApiMgr_bianPai_delBtn">
+                    <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>删除
+                </button>
+                <button id="composeApiMgr_bianPai_linkOperateButton" style="display: none"></button>
+                <button id="composeApiMgr_bianPai_descApiButton" style="display: none"></button>
+                <button id="composeApiMgr_bianPai_decideButton" style="display: none"></button>
+            </div>
+        </div>
+
+        <div class="col-xs-12" style=" clear:both;min-height:440px;max-height: 440px;border: 1px solid #ccc;margin-top: 16px;">
+            <div id="composeApiMgr_bianpai_setting"></div>
+        </div>
+
+        <div id="composeApiMgr_linkSetting_popup"></div>   <!--连线设置弹出层-->
+        <div id="composeApiMgr_descApiSetting_popup"></div>  <!--api设置弹出层-->
+        <div id="composeApiMgr_decideSetting_popup"></div>  <!--判断条件弹出层-->
+
+    </div>
+
+    <div class="col-md-12 col-xs-12 p10 mt10" align="center" id="composeApiMgr_saveButton" style="display: none">
+        <button id="composeApiMgr_preBtn" type="button"  class="btn btn_cancel btn_cancel1 btn_cancel2" style="margin-right: 30px;">
+            <i class="fa fa-arrow-circle-o-up fa_icon1 fa_icon_white fa_icon_pink p3"></i>上一步
+        </button><button id="composeApiMgr_saveCloseBtn" type="button" opt="submit" class="btn btn_pre btn_pre1 btn_pre2">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>保存并关闭
+        </button>
+    </div>
+</div>
+<script type="text/javascript">
+    require(["biz/test/composeApi"], function (composeApi) {
+        composeApi.init();
+    });
+</script>

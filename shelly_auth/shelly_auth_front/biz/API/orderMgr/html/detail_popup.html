@@ -1,0 +1,313 @@
+<style>
+    #OrderMgrDetail .k-tabstrip > .k-content {
+        padding: 0px;
+    }
+</style>
+<div class="row" id="OrderMgrDetail">
+    <input type="hidden" id="OrderMgrDetail_isAddHis"/>
+    <input type="hidden" id="OrderMgrDetail_isAdd"/>
+    <input type="hidden" id="OrderMgrDetail_apiId"/>
+    <input type="hidden" id="OrderMgrDetail_userCode"/>
+
+    <input type="hidden" id="OrderMgrDetail_menuCode"/>
+    <input type="hidden" id="OrderMgrDetail_isOrderHis"/>
+    <input type="hidden" id="OrderMgrDetail_isOrder"/>
+    <input type="hidden" id="OrderMgrDetail_orderServiceId"/>
+    <input type="hidden" id="OrderMgrDetail_publishServiceId">
+
+    <input type="hidden" id="OrderMgrDetail_queryParam"/>
+
+    <div class="col-lg-11 col-xs-11" id="baseInfoTitle"><h3 class="title_service fl"
+                                                            style="margin-top: 0px">基本信息</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-11 col-xs-11 col-md-12  p0" id="baseInfoContent">
+        <div class="form-horizontal col-xs-4 col-lg-4 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">应用名称:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_serverName"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-4 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">API名称:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_name" class="k-textbox"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-4 p0" id="OrderMgrDetail_state_div">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">状态:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_state"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-8 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0" style="width: 17.5%;">API描述:</label>
+                <div class="col-xs-9">
+                    <input id="OrderMgrDetail_desc" class="k-textbox" />
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-8 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0" style="width: 17.5%;">API编码:</label>
+                <div class="col-xs-9">
+                    <input id="OrderMgrDetail_GUID" class="k-textbox"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-11 col-xs-11" id="requestTitle"><h3 class="title_service fl" style="margin-top: 0px">请求信息</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-11 col-xs-11 col-md-11  p0" id="requestContent1">
+        <div class="form-horizontal col-xs-4 col-lg-4 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">传输协议:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_transProto"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-4 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">IP:</label>
+                <div class="col-xs-6">
+                    <input type="hidden" id="OrderMgrDetail_apiaddrid"/>
+                    <input id="OrderMgrDetail_ip" class="k-textbox" readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-4 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">端口:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_port" class="k-textbox" readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-4 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">请求方法:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_method"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-4 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">Body协议:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_contentProto"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-4 p0" style="display: none">
+            <div class="form-group">
+                <label class="control-label  col-xs-4 p0">请求模式:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_requestStyle" class="shadow_none"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-8 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0" style="width: 17.5%;">API路径:</label>
+                <div class="col-xs-9">
+                    <input id="OrderMgrDetail_path" class="k-textbox" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-11 col-xs-11 col-md-11  p0" id="requestContent2">
+        <div class="form-horizontal col-sm-4  col-md-5 col-lg-12">
+            <div class="form-group">
+                <label class="control-label col-sm-1 col-md-1 p0" style="width: 10.3%">参数样例:</label>
+                <div class="col-xs-10">
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="APIMgr_inparamDemoTitle"><h3
+                            class="title_service fl" style="margin: 0px;font-size: 12px">入参样例<i
+                            class="fa fa-caret-down fa_icon"
+                            style="float: right;font-size:1.4rem;padding: 8px 5px;"></i></h3></div>
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="APIMgr_inparamDemoContent" style="display: none">
+                        <textarea style="-webkit-box-shadow:none;box-shadow:none; width:99%;padding: 6px 14px;border-top-width: 0;"
+                                  id="OrderMgrDetail_inparamDemo"
+                                   class="form-control shadow_none" rows="8"></textarea>
+                    </div>
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="APIMgr_outparamDemoTitle"><h3
+                            class="title_service fl" style="margin: 0px;font-size: 12px">出参样例<i
+                            class="fa fa-caret-down fa_icon"
+                            style="float: right;font-size:1.4rem;padding: 8px 5px;"></i></h3></div>
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="APIMgr_outparamDemoContent"
+                         style="display: none">
+                        <textarea style="-webkit-box-shadow:none;box-shadow:none;width:99%;padding: 6px 14px;border-top-width: 0;"
+                                  id="OrderMgrDetail_outparamDemo"
+                                   class="form-control shadow_none" rows="8"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-11 col-xs-11" id="requestHighTitle"  style="display: none"><h3 class="title_service fl"
+                                                               style="margin-top: 0px">
+        高级配置</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="requestHighContent" style="display: none">
+        <div class="form-horizontal col-xs-4 col-lg-4 p0">
+            <div class="form-group">
+                <label class="control-label  col-xs-4 p0">超时时间:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_waitTimeLimit" class="shadow_none"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-4 p0">
+            <div class="form-group">
+                <label class="control-label  col-xs-4 p0">最大并发数:</label>
+                <div class="col-xs-6">
+                    <input id="OrderMgrDetail_concurrencyLimit" class="shadow_none"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-xs-12" id="requestParamTitle" style="display: none"><h3 class="title_service fl"
+                                                                                      style="margin-bottom: 5px;">
+        入参定义（只需填写需要转换的入参）</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12" id="requestParamContent" style="display: none">
+        <div id="requestParamGrid"></div>
+        <!--  <button id="requestParamGrid_dataAdd" class="add_btn fl">
+              <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+          </button>-->
+    </div>
+    <div class="col-lg-12 col-xs-12" id="requestOutParamTitle" style="display: none"><h3 class="title_service fl"
+                                                                                         style="margin-bottom: 5px;">
+        出参定义（只需填写需要转换的出参）</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12" id="requestOutParamContent" style="display: none">
+        <div id="requestOutParamGrid"></div>
+        <!-- <button id="requestOutParamGrid_dataAdd" class="add_btn fl">
+             <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+         </button>-->
+    </div>
+    <!--  <div class="col-md-12 col-xs-12 p10" align="center" id="nextButton">
+          <button id="OrderMgrDetail_nextBtn" type="button" opt="cancel" class="btn btn_cancel btn_cancel1 btn_cancel2">
+              <i class="fa fa-arrow-circle-o-down fa_icon1 fa_icon_white fa_icon_blue p3"></i>下一步
+          </button>
+          <button id="OrderMgrDetail_closeBtn1" type="button" opt="submit" class="btn btn_pre btn_pre1 btn_pre2">
+              <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>返回
+          </button>
+      </div>-->
+    <div class="col-lg-12 col-xs-12" id="descRequestTitle" style="display: none"><h3 class="title_service fl">目标API</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="descRequestContent" style="display: none">
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">传输协议:</label>
+                <div class="col-xs-8">
+                    <input id="OrderMgrDetail_desTransProto"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4 p0">报文协议:</label>
+                <div class="col-xs-8">
+                    <input id="OrderMgrDetail_desContentProto"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4 p0">请求方法:</label>
+                <div class="col-xs-8">
+                    <input id="OrderMgrDetail_desMethod"/>
+                </div>
+            </div>
+        </div>
+        <!--<div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4 p0">负载算法:</label>
+                <div class="col-xs-8">
+                    <input id="OrderMgrDetail_loadBalance"/>
+                </div>
+            </div>
+        </div>-->
+    </div>
+    <div class="col-lg-12 col-xs-12" id="descPathTitle" style="display: none">
+        <h3 class="title_service fl" style="margin-bottom: 5px;">目标地址</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12" id="descPathContent" style="display: none">
+        <div id="descPathGrid"></div>
+        <!--  <button id="descPathGrid_dataAdd" class="add_btn fl">
+              <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+          </button>-->
+    </div>
+
+    <div class="col-lg-12 col-xs-12" id="descConstParamTitle" style="display: none">
+        <h3 class="title_service fl" style="margin-bottom: 5px;">
+            常量参数</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12" id="descConstParamContent" style="display: none">
+        <div id="descConstParamGrid"></div>
+        <!-- <button id="descConstParamGrid_dataAdd" class="add_btn fl">
+             <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+         </button>-->
+    </div>
+
+    <div class="col-lg-12 col-xs-12" id="descSysParamTitle" style="display: none">
+        <h3 class="title_service fl" style="margin-bottom: 5px;">
+            系统参数</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12" id="descSysParamContent" style="display: none">
+        <div id="descSysParamGrid"></div>
+        <!--  <button id="descSysParamGrid_dataAdd" class="add_btn fl">
+              <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+          </button>-->
+    </div>
+
+    <div class="col-lg-12 col-xs-12" id="descParamTitle" style="display: none">
+        <h3 class="title_service fl" style="margin-bottom: 5px;">
+            目标入参配置</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12" id="descParamContent" style="display: none">
+        <div id="descParamGrid"></div>
+    </div>
+    <div class="col-lg-12 col-xs-12" id="descOutParamTitle" style="display: none">
+        <h3 class="title_service fl" style="margin-bottom: 5px;">
+            目标出参配置</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12" id="descOutParamContent" style="display: none">
+        <div id="descOutParamGrid"></div>
+    </div>
+
+    <div class="col-md-12 col-xs-12 p10" align="center" id="saveButton">
+        <button id="OrderMgrDetail_orderBtn" type="button" opt="submit" class="btn btn_pre btn_pre1 btn_pre2" style="display: none;">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>订阅申请
+        </button>
+        <button id="OrderMgrDetail_closeBtn" type="button" opt="cancel" class="btn btn_pre btn_pre1 btn_pre2">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+        </button>
+    </div>
+</div>
+

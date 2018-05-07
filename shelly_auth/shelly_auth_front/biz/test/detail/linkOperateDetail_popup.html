@@ -1,0 +1,30 @@
+<style>
+    #linkOperatePopupDetail .table>tbody>tr.success>td{
+        background-color: inherit;
+        color:#000;
+    }
+</style>
+<div id="linkOperatePopupDetail" style="max-width: 900px;" class="row">
+    <input type="hidden" id="linkOperatePopupDetail_operatorId"/>
+    <input type="hidden" id="linkOperatePopupDetail_endFlag"/>
+    <div class="col-xs-11">
+        <div id="linkOperatePopupDetail_tabstrip">
+            <ul>
+                <li>系统参数</li>
+                <li>下节点入参</li>
+            </ul>
+            <div style="height: 230px;overflow:auto;">
+                <div id="linkOperatePopupDetail_systemParamGrid"></div>
+            </div>
+            <div style="height: 230px;overflow:auto;">
+                <div id="linkOperatePopupDetail_inParamGrid"></div>
+            </div>
+        </div>
+    </div>
+    <!--Button组-->
+    <div class="col-xs-11 p10" align="center">
+        <button id="linkOperatePopupDetail_cancel" opt="cancel" type="button"  class="btn btn_cancel btn_cancel1 btn_cancel2">
+            <i class="fa fa-arrow-circle-o-up fa_icon1 fa_icon_white fa_icon_pink p3"></i>取消
+        </button>
+    </div>
+</div>

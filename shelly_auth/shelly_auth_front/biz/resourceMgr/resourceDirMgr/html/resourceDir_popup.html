@@ -1,0 +1,77 @@
+<div id="dataSourceInfo">
+    <input type="hidden" id="divModel"/>
+    <input type="hidden" id="pDirId"/>
+    <input type="hidden" id="dirLevel"/>
+    <input type="hidden" id="dirId">
+    <input type="hidden" id="sourceDir_dirStatus">
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-12">
+            <div class="form-group">
+                <label class="control-label col-xs-3 p0" style="width: 100px;"><em
+                        class="color_red">*</em>资源目录代码:</label>
+                <div class="col-xs-8">
+                    <input class="k-textbox" id="sourceDir_dirCode" name="sourceDir_dirCode" maxlength="30"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-12">
+            <div class="form-group">
+                <label class="control-label col-xs-3 p0" style="width: 100px;"><em
+                        class="color_red">*</em>资源目录名称:</label>
+                <div class="col-xs-8">
+                    <input class="k-textbox" id="sourceDir_dirName" name="sourceDir_dirName" maxlength="30"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-12">
+            <div class="form-group">
+                <label class="control-label col-xs-3 p0" style="width: 100px;"><em
+                        class="color_red">*</em>是否开放:</label>
+                <div class="col-xs-8">
+                    <input type="radio" style="margin-left: 20px;" value="1"  name="sourceDir_isOpen"/> 是
+                    <input type="radio" style="margin-left: 20px;" value="0" name="sourceDir_isOpen" /> 否
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-12">
+            <div class="form-group">
+                <label class="control-label col-xs-3 p0" style="width: 100px;"><em
+                        class="color_red">*</em>是否包含子目录:</label>
+                <div class="col-xs-8" >
+                    <input type="radio" style="margin-left: 20px;" value="1" name="sourceDir_hadFolder"/> 是
+                    <input type="radio" style="margin-left: 20px;" value="0" name="sourceDir_hadFolder" /> 否
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-12">
+            <div class="form-group">
+                <label class="control-label col-xs-3  p0" style="width: 100px;">说明:</label>
+                <div class="col-xs-8">
+                    <textarea cols="50" rows="4" id="sourceDir_describe" name="sourceDir_describe"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Button组-->
+<div class="col-md-12 col-xs-12 p10" >
+    <button type="button" opt="enable" id="enable"  style="margin-left: 100px;"  class="btn btn_delete btn_delete1 btn_delete2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>启用
+    </button>
+    <button type="button" opt="submit" id="submit" style="margin-left:40px;" class="btn btn_delete btn_delete1 btn_delete2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>提交
+    </button>
+    <button type="button" opt="cancel" id="cancel" style="margin-left:40px;" id="serverMgrDetail_cancel" class="btn btn_pre btn_pre1 btn_pre2">
+        <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+    </button>
+</div>
+

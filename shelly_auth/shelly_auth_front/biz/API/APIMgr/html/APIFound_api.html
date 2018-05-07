@@ -1,0 +1,50 @@
+<div id="APIFound_api">
+    <div class="col-lg-12 search-owe">
+
+        <input type="hidden" id="APIFound_api_menuCode"/>
+        <input type="hidden" id="APIFound_api_search_serviceId"/>
+        <input type="hidden" id="APIFound_api_search_serviceDesc"/>
+        <input type="hidden" id="APIFound_api_search_orgCode"/>
+        <input type="hidden" id="APIFound_api_search_orgName"/>
+    </div>
+
+    <div class="col-lg-12 button-owe">
+        <!--Button组-->
+        <div class="fr">
+            <button type="button" id="APIFound_orderBtn" class="btn btn_add btn_add1 btn_add2">
+                <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>API订阅
+            </button>
+            <button id="APIFound_closeBtn" type="button" opt="cancel" class="btn btn_pre btn_pre1 btn_pre2">
+                <i class="fa fa-arrow-circle-o-left fa_icon1 fa_icon_white p3"></i>返回
+            </button>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-3 fr">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">订阅应用名称:</label>
+                <div class="col-xs-8">
+                    <input id="APIFound_orderServiceId"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--列表-->
+    <div class="col-lg-12 grid-owe">
+        <div id="APIFound_apiGrid"></div>
+        <div id="APIFound_apiGridPager"></div>
+    </div>
+
+    <button type="button" id="APIFound_hideBtn" class="btn btn_check btn_check1 btn_check2" style="display: none">
+        <i class="fa fa-pencil-square fa_icon2 fa_icon_white p3"></i>API详情
+    </button>
+
+    <!--弹出窗口-->
+    <div id="APIFound_orderPopup"></div>
+    <div id="detail_popupDiv"></div>
+</div>
+<script type="text/javascript">
+    require(["biz/API/APIMgr/js/APIFound_api"], function (list) {
+        list.init();
+    });
+</script>

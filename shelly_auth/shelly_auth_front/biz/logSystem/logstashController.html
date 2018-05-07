@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>采集监控</title>
+    <meta charset="UTF-8">
+</head>
+<style>
+    #logstashController .online {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        animation: breatheLight 1s linear infinite alternate;
+        -moz-animation: breatheLight 1s linear infinite alternate;
+        /* Firefox */
+        -webkit-animation: breatheLight 1s linear infinite alternate;
+        /* Safari and Chrome */
+        -o-animation: breatheLight 1s linear infinite alternate;
+        /* Opera */
+    }
+
+    #logstashController .offline {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #cccccc;
+    }
+
+    @keyframes breatheLight {
+        from {
+            background: Green;
+        }
+        to {
+            background: lightGreen;
+        }
+    }
+
+    @-moz-keyframes breatheLight
+        /* Firefox */
+
+    {
+        from {
+            background: Green;
+        }
+        to {
+            background: lightGreen;
+        }
+    }
+
+    @-webkit-keyframes breatheLight
+        /* Safari and Chrome */
+
+    {
+        from {
+            background: Green;
+        }
+        to {
+            background: lightGreen;
+        }
+    }
+
+    @-o-keyframes breatheLight
+        /* Opera */
+
+    {
+        from {
+            background: Green;
+        }
+        to {
+            background: lightGreen;
+        }
+    }
+</style>
+
+<body>
+<div id="logstashController">
+    <div class="col-lg-12 search-owe">
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">采集代理:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="logstashId"/>
+                </div>
+            </div>
+        </div>
+        <!--  <div class="form-group form-horizontal col-sm-4  col-md-4 col-lg-3">
+              <label class="control-label col-sm-4 col-md-4">服务id:</label>
+              <div class="col-sm-6 col-md-6">
+                  <input id="serviceId" class="k-textbox" placeholder="请输入服务id"/>
+              </div>
+          </div>-->
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">IP地址:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="logstashHost" class="k-textbox" placeholder="请输入IP地址"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">运行状态:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="logstashStatus"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="searchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="col-lg-12 button-owe">
+         <button type="button" id="searchBtn" class="k-button k-button-icontext wd-k-warning">
+             <span class="k-sprite k-icon k-i-search"></span>查询
+         </button>
+         &lt;!&ndash;  <button type="button" id="addBtn" class="k-button k-button-icontext wd-k-success">
+           <span class="k-sprite k-icon k-i-plus"></span>新增
+       </button>
+           <button type="button" id="editBtn" class="k-button k-button-icontext wd-k-primary">
+           <span class="k-sprite k-icon k-edit"></span>修改
+       </button>
+           <button type="button" id="deltBtn" class="k-button k-button-icontext wd-k-danger">
+           <span class="k-sprite k-icon k-delete"></span>删除
+       </button>&ndash;&gt;
+     </div>-->
+
+    <div class="col-lg-12 hide" style="text-align:right;margin-top: 10px;">
+        <button type="button" class="btn btn_add btn_add1 btn_add2" id="backButon">
+            <i class="fa fa-arrow-circle-o-left fa_icon1 fa_icon_white p3"></i>返回
+        </button>
+    </div>
+
+    <!--列表-->
+    <div class="col-lg-12 grid-owe">
+        <div id="logstashControllerGrid"></div>
+        <div id="logstashControllerGridPager"></div>
+    </div>
+    <!--弹出窗口-->
+    <div id="logstashController_addPopup"></div>
+    <div id="logstashController_editPopup"></div>
+
+</div>
+<script type="text/javascript">
+    require(["biz/logSystem/logstashController"], function (logstashController) {
+        logstashController.init();
+    });
+</script>
+
+</body>
+
+</html>

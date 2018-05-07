@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>应用归属</title>
+    <meta charset="UTF-8">
+    <style>
+        #mainBorder {
+            border: 1px solid #A3D0E4;
+            min-height: 300px; /*（ie8.9.ff.chrome）*/
+            *height: 100%; /*（ie7）*/
+            _height: 300px; /*（ie6） ie6超出自动溢出*/
+        }
+
+        .k-treeview span.k-in {
+            font-size: small;
+        }
+
+    </style>
+</head>
+<body>
+<div id="orgInfo_popup" style="padding: 2% 2% 8%">
+
+    <input type="hidden" id="orgInfo_popup_selected"/>
+
+    <section>
+
+       <!-- <div style="padding-bottom: 10px;">
+            <div style="float: left">
+                <input class="k-textbox" id="orgInfo_popup_orgSerchPara" type="text"
+                       placeholder="请输入机构名称" maxlength="25" style="width:100%"/>
+            </div>
+
+            <div class="buttons-wrap">
+                <button type="button" id="orgInfo_popup_queryOrg" class="search_btn search_btn1"><i
+                        class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+            </div>
+        </div>-->
+
+        <div id="mainBorder" style="overflow:auto">
+            <div style="height:300px;  ">
+                <div id="orgTreeview" opt="orgTree"></div>
+            </div>
+        </div>
+
+        <p style="text-align: center; padding-top: 20px;">
+            <button type="button" opt="submit" id="popupSaveBtn" class="btn btn_pre btn_pre1 btn_pre2">
+                <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>确定
+            </button>
+            <button type="button" opt="cancel" class="btn btn_delete btn_delete1 btn_delete2">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>清除
+            </button>
+        </p>
+    </section>
+</div>
+</body>
+</html>

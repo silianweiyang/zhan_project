@@ -1,0 +1,49 @@
+<div id="serverList">
+    <div class="col-lg-12 search-owe">
+        <div class="form-horizontal  col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4">服务名称:</label>
+                <div class="col-xs-8">
+                    <input  id="serverList_name" class="k-textbox" placeholder="请输入服务名称"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4 col-md-4 col-lg-3">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="serverList_search" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--Button组-->
+    <div class="col-lg-12 button-owe">
+        <div class="fr">
+            <button type="button" id="serverList_add" class="btn btn_add btn_add1 btn_add2">
+                <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>新增服务
+            </button>
+            <button type="button" id="serverList_edit" class="btn btn_check btn_check1 btn_check2">
+                <i class="fa fa-pencil-square fa_icon2 fa_icon_white p3"></i>修改服务
+            </button>
+            <button type="button" id="serverList_delete" class="btn btn_delete btn_delete1 btn_delete2">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>删除服务
+            </button>
+        </div>
+    </div>
+
+    <!--列表-->
+    <div class="col-lg-12 grid-owe">
+        <div id="serverListGrid"></div>
+        <div id="serverListGridPager"></div>
+    </div>
+
+    <!--弹出窗口-->
+    <div id="serverList_plusPopup"></div>
+    <div id="serverList_editPopup"></div>
+</div>
+<script type="text/javascript">
+    require(["biz/monitorManage/nodeMgr/js/nodeList"], function (serverList) {
+        serverList.init();
+    });
+</script>

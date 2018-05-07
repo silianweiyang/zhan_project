@@ -1,0 +1,316 @@
+<style>
+    #APIMgrDetail .k-tabstrip>.k-content{
+        padding:0px;
+    }
+    #APIMgr .table>tbody>tr.success>td{
+        background-color: inherit;
+        color:#000;
+    }
+</style>
+<div class="row" id="APIMgrDetail">
+    <input type="hidden" id="APIMgrDetail_requestParamConvert"/>
+    <input type="hidden" id="APIMgrDetail_responseParamConvert"/>
+    <input type="hidden" id="APIMgrDetail_waitTimeLimit"/>
+    <input type="hidden" id="APIMgrDetail_concurrencyLimit"/>
+    <input type="hidden" id="APIMgrDetail_queryParam"/>
+    <input type="hidden" id="APIMgrDetail_menuCode"/>
+    <input type="hidden" id="APIMgrDetail_isAddHis"/>
+    <input type="hidden" id="APIMgrDetail_isAdd"/>
+    <input type="hidden" id="APIMgrDetail_apiId"/>
+    <input type="hidden" id="APIMgrDetail_userCode"/>
+    <input type="hidden" id="APIMgrDetail_soapDemo"/>
+    <input type="hidden" id="APIMgrDetail_extendFilter"/>
+    <div class="col-lg-12 col-xs-12" id="baseInfoTitle" style="margin-top: 20px;"><h3 class="title_service fl" style="margin-top: 0px">基本信息</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="baseInfoContent">
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>应用名称:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_serverName"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>API名称:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_name" class="k-textbox" placeholder="请输入API名称" maxlength="50"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3" id="APIMgrDetail_state_div">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>状态:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_state"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3" style="display: none">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>是否公开:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_ispublic"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">API描述:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_desc" class="k-textbox" placeholder="请输入API描述"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-6">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0">API编码:</label>
+                <div class="col-xs-10">
+                    <input id="APIMgrDetail_GUID" class="k-textbox" placeholder="请输入API编码"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-xs-12" id="requestTitle"  ><div class="title_bg"><h3 class="title_service1 fl" style="margin-bottom: 5px;margin-top: 0px;">请求信息<div class=" instruction_t fr">
+        <div class="instruction_box"><a href="javascript:void(0)"><i class="fa fa-info-circle  mt5"></i><div class="carryOut">
+            <li><strong>API路径</strong>：必须以/开头，例如:/a/b/c</li>
+            <li><strong>请求方法</strong>：<ul style="margin-bottom: 0px;">
+                <li>GET：请求参数以key=value结构以”?”拼接于URL地址之后，多个参数以”&”拼接。响应参数存在于响应Body体，Body协议指的是响应参数的数据结构。</li>
+                <li>DELETE、POST、PUT：请求参数与响应参数都存在于Body体，Body协议指的是请求参数及响应参数的数据结构。</li>
+            </ul>
+            </li>
+            <li><strong>Body协议</strong>：<ul style="margin-bottom: 0px;">
+                <li>JSON：需满足json结构规则，参数根路径必须为json对象，不支持根路径为json数组的json参数。</li>
+                <li>XML：需满足xml结构规则，支持多个xml对象参数。转义的xml符号以字符串进行解析。</li>
+                <li>SOAP：需满足soap结构规则，转义的xml符号以字符串进行解析。</li>
+                <li>XML_TEXT：需满足xml结构规则，支持多个xml对象参数。转义的xml符号以xml结构进行解析。</li>
+                <li>SOAP_TEXT：需满足soap结构规则，转义的xml符号以xml结构进行解析。</li>
+                <li>TEXT：无结构字符串。</li>
+            </ul>
+            </li>
+        </div></a></div>
+    </div></h3></div>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="requestContent1">
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>传输协议:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_transProto"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>IP:</label>
+                <div class="col-xs-8">
+                    <input type="hidden" id="APIMgrDetail_apiaddrid"/>
+                    <input id="APIMgrDetail_ip" class="k-textbox" readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>端口:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_port" class="k-textbox" readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>API路径:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_path" class="k-textbox" placeholder="请输入API路径" maxlength="100"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>请求方法:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_method"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>Body协议:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_contentProto"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3" style="display: none">
+            <div class="form-group">
+                <label class="control-label  col-xs-4 p0"><em
+                        class="color_red">*</em>请求模式:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_requestStyle" class="shadow_none"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="requestContent2">
+        <div class="form-horizontal col-sm-4  col-md-5 col-lg-12">
+            <div class="form-group">
+                <label class="control-label col-sm-1 col-md-1 p0">参数样例:</label>
+                <div class="col-xs-11">
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="APIMgrDetail_inparamDemoTitle"><h3 class="title_service fl" style="margin: 0px">入参样例<i class="fa fa-caret-up fa_icon" style="float: right;font-size:1.4rem;padding: 8px 5px;"></i></h3></div>
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="APIMgrDetail_inparamDemoContent">
+                        <textarea style="-webkit-box-shadow:none;box-shadow:none;" id="APIMgrDetail_inparamDemo"  class="form-control shadow_none" rows="8"></textarea>
+                    </div>
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="APIMgrDetail_outparamDemoTitle"><h3 class="title_service fl" style="margin: 0px">出参样例<i class="fa fa-caret-down fa_icon" style="float: right;font-size:1.4rem;padding: 8px 5px;"></i></h3></div>
+                    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="APIMgrDetail_outparamDemoContent" style="display: none">
+                        <textarea style="-webkit-box-shadow:none;box-shadow:none;" id="APIMgrDetail_outparamDemo"  class="form-control shadow_none" rows="8"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-xs-12 p10" align="center" id="nextButton">
+        <button id="APIMgrDetail_closeBtn1" type="button" opt="submit" class="btn btn_pre btn_pre1 btn_pre2">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>取消
+        </button>
+        &nbsp;&nbsp;
+        <button id="APIMgrDetail_nextBtn" type="button" opt="cancel" class="btn btn_cancel btn_cancel1 btn_cancel2">
+            <i class="fa fa-arrow-circle-o-down fa_icon1 fa_icon_white fa_icon_blue p3"></i>下一步
+        </button>
+    </div>
+    <div class="col-lg-12 col-xs-12" id="descRequestTitle" style="display: none;margin-top: 20px"><h3 class="title_service fl" style="margin-top: 0px">目标API</h3>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12  p0" id="descRequestContent" style="display: none">
+        <div class="form-horizontal col-xs-4 col-lg-3" style="display: none">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0"><em
+                        class="color_red">*</em>传输协议:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_desTransProto"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4 p0"><em
+                        class="color_red">*</em>请求方法:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_desMethod"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4 p0"><em
+                        class="color_red">*</em>Body协议:</label>
+                <div class="col-xs-8">
+                    <input id="APIMgrDetail_desContentProto"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-6 col-lg-6" style="display: none" id="APIList_address_div">
+            <div class="form-group">
+                <label class="control-label  col-xs-2 p0"><em
+                        class="color_red">*</em>请求地址:</label>
+                <div class="col-xs-10">
+                        <input class="k-textbox" id="APIMgrDetail_wsdlPath"
+                               placeholder="请输入WSDL地址"   readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+        <div  class="col-lg-12 col-xs-12 col-md-12  p0" style="display: none" id="APIList_soap_div">
+            <div class="form-horizontal col-xs-4 col-lg-3">
+                <div class="form-group">
+                    <label class="control-label  col-xs-4 p0"><em
+                            class="color_red">*</em>services:</label>
+                    <div class="col-xs-8">
+                        <input id="APIMgrDetail_services" class="k-textbox" readonly="readonly"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-xs-4 col-lg-3">
+                <div class="form-group">
+                    <label class="control-label  col-xs-4 p0"><em
+                            class="color_red">*</em>serviceBinds:</label>
+                    <div class="col-xs-8">
+                        <input id="APIMgrDetail_serviceBinds" class="k-textbox" readonly="readonly"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-xs-4 col-lg-3">
+                <div class="form-group">
+                    <label class="control-label  col-xs-4 p0"><em
+                            class="color_red">*</em>bindOperations:</label>
+                    <div class="col-xs-8">
+                        <input id="APIMgrDetail_bindOperations" class="k-textbox" readonly="readonly"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-xs-12" id="descPathTitle" style="display: none"><div class="title_bg"><h3 class="title_service1 fl" style="margin-bottom: 5px;margin-top: 0px;">目标地址<div class=" instruction_t fr">
+        <div class="instruction_box"><a href="javascript:void(0)"><i class="fa fa-info-circle  mt5"></i><div class="carryOut">
+            <li><strong>访问地址</strong>:必须以/开头，例如:/a/b/c</li>
+        </div></a></div>
+    </div></h3></div>
+        <span class="left_line"></span>
+    </div>
+    <div class="col-lg-12 col-xs-12 col-md-12" id="descPathContent" style="display: none">
+        <div id="APIMgrDetail_descPathGrid"></div>
+        <button id="APIMgrDetail_descPathGrid_dataAdd" class="add_btn fl" style="display: none">
+            <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+        </button>
+    </div>
+    <!---本次改造新增-->
+    <div class="col-lg-12 col-xs-12" id="descHighParamTitle" style="display: none;margin-top: 20px;"><div class="title_bg"><h3 class="title_service1 fl" style="margin: 0px">高级配置<div class=" instruction_t fr">
+        <div class="instruction_box"><a href="javascript:void(0)"><i class="fa fa-info-circle  mt5"></i><div class="carryOut">
+            <li><strong>超时时间</strong>:目标API未在超时时间内响应，平台终止等待，直接返回超时错误</li>
+            <li><strong>最大并发数</strong>:并发数超出该设置时，平台直接返回并发限制错误</li>
+            <!--<li><strong>字段过滤</strong>:配置的过滤字段从响应报文内剔除。字段路径以.分隔，如字段名称存在特殊符号必须放入""内。例如：return.list.info.id; return.list."com.wondersgroup.com.info".id;</li>-->
+        </div></a></div>
+    </div></h3></div>
+        <span class="left_line"></span>
+    </div>
+    <div class="Advanced_configuration col-lg-12 col-xs-12 col-md-12" id="descHighParamContent" style="display: none">
+        <ul style="padding-left: 15px;">
+            <li class="configuration1 col-xs-3 p0" style="width:24%;" id="APIMgrDetail_rongduanSetting"><div class="advanced_img"><img src="images/Advanced_icon01.png"></div><a href="javascript:void(0)">熔断配置</a></li>
+            <li class="configuration2 col-xs-3 p0" style="width:24%;" id="APIMgrDetail_inparamSetting"><div class="advanced_img"><img src="images/Advanced_icon02.png"></div><a href="javascript:void(0)">入参转换</a></li>
+            <li class="configuration3 col-xs-3 p0" style="width:24%;" id="APIMgrDetail_outparamSetting"><div class="advanced_img"><img src="images/Advanced_icon03.png"></div><a href="javascript:void(0)">出参转换</a></li>
+            <li class="configuration3 col-xs-3 p0" style="width:24%;" id="APIMgrDetail_customSetting"><div class="advanced_img"><img src="images/Advanced_icon01.png"></div><a href="javascript:void(0)">扩展插件</a></li>
+        </ul>
+    </div>
+
+    <div class="col-md-12 col-xs-12 p10" align="center" id="saveButton" style="display: none">
+        <button id="APIMgrDetail_preBtn" type="button"  class="btn btn_cancel btn_cancel1 btn_cancel2">
+            <i class="fa fa-arrow-circle-o-up fa_icon1 fa_icon_white fa_icon_pink p3"></i>上一步
+        </button>
+        &nbsp;&nbsp;
+        <button id="APIMgrDetail_saveCloseBtn" type="button" opt="submit" class="btn btn_pre btn_pre1 btn_pre2">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+        </button>
+    </div>
+</div>
+<div id="APIMgrDetail_wsdl_test"></div>
+<div id="APIMgrDetail_inparamSettingPopup"></div>
+<div id="APIMgrDetail_outparamSettingPopup"></div>
+<div id="APIMgrDetail_rongduanSettingPopup"></div>
+<div id="APIMgrDetail_customSettingPopup"></div>
+<script type="text/javascript">
+    require(["biz/API/APIMgr/js/detail"], function (detail) {
+        detail.init();
+    });
+</script>

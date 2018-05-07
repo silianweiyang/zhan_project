@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/wandaui/styles/wanda.common-bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/wandaui/styles/wanda.bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/wandaui/styles/wanda.dataviz.min.css"/>
+    <link rel="stylesheet" href="lib/wandaui/styles/wanda.dataviz.bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/component.css"/>
+    <link rel="stylesheet" href="css/frame.css">
+    <script src="lib/wandaui/js/jquery.min.js"></script>
+    <script src="lib/wandaui/js/angular.min.js"></script>
+    <script src="lib/wandaui/js/wanda.all.min.js"></script>
+</head>
+<body>
+<div id="example">
+    <h3>1、导航栏</h3>
+    <nav class="wd-nav-bar clearfix">
+        <div class="wd-nav-bar-content container">
+            <a href="#" class="wd-nav-bar-header">导航栏</a>
+            <span class="wd-nav-line"></span>
+            <ul class="wd-nav-menu" id="menu">
+                <li class="wd-nav-first">Profile</li>
+                <li class="wd-nav-first">Schedule
+                    <ul>
+                        <li>Profile</li>
+                        <li>Schedule</li>
+                        <li>Orders
+                            <ul>
+                                <li>Profile</li>
+                                <li>Schedule</li>
+                                <li>Orders</li>
+                                <li>Gallery</li>
+                                <li>FAQ</li>
+                                <li>wanda UI demos</li>
+                            </ul>
+                        </li>
+                        <li>Gallery</li>
+                        <li>FAQ</li>
+                        <li>wanda UI demos</li>
+                    </ul>
+                </li>
+                <li class="wd-nav-first">Orders</li>
+                <li class="wd-nav-first">Gallery</li>
+                <li class="wd-nav-first">FAQ</li>
+                <li class="wd-nav-first">wanda UI demos</li>
+            </ul>
+            <div class="wd-nav-right">
+                <a id="userHello">Admin 下午好</a>
+                <span class="wd-nav-line"></span>
+                <a id="operDocument" href="#">下载</a>
+                <span class="wd-nav-line"></span>
+                <a id="signUpBtn">退出</a>
+            </div>
+        </div>
+    </nav>
+    <h3>2、表单</h3>
+    <div class="col-lg-12" style="margin:20px 0px;">
+        <div class="form-horizontal form-widgets col-sm-4">
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="name">姓名</label>
+                <div class="col-sm-8 col-md-6">
+                    <input id="name" value="Johnatan Dodsworth"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="birthday">生日</label>
+                <div class="col-sm-8 col-md-6">
+                    <input type="date" value="10/09/1979"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="experience">爱好</label>
+                <div class="col-sm-8 col-md-6">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox1" value="option1"> 篮球
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox2" value="option2"> 羽毛球
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal form-widgets col-sm-4">
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="gender">性别</label>
+                <div class="col-sm-8 col-md-6">
+                    <select id="gender">
+                        <option selected>男</option>
+                        <option>女</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="occupation">工作</label>
+                <div class="col-sm-8 col-md-6">
+                    <input id="occupation" placeholder="e.g. Developer"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="language">是否有效</label>
+                <div class="col-sm-8 col-md-6">
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal form-widgets col-sm-4">
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="experience">工作年限</label>
+                <div class="col-sm-8 col-md-6">
+                    <input id="experience" type="number" value="4"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="language">语言</label>
+                <div class="col-sm-8 col-md-6">
+                    <select id="language">
+                        <option selected>英语</option>
+                        <option>德语</option>
+                        <option>汉语</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>3、按钮</h3>
+    <div class="buttons-wrap" style="text-align: left;">
+        <button type="button" class="k-button k-button-icontext wd-k-warning">
+            <span class="k-sprite k-icon k-i-search"></span>查询按钮
+        </button>
+        <button type="button"
+                class="k-button k-button-icontext wd-k-info">
+            <span class="k-sprite k-icon k-i-plus"></span>新增按钮
+        </button>
+        <button type="button" class="k-button k-button-icontext wd-k-primary">
+            <span class="k-sprite k-icon k-edit"></span>修改按钮
+        </button>
+        <button type="button" class="k-button k-button-icontext wd-k-primary w-border">
+            <span class="k-sprite k-icon k-edit"></span>扁平按钮
+        </button>
+        <button type="button" class="k-button k-button-icontext wd-k-success  w-border">
+            <span class="k-sprite k-icon k-edit"></span>success
+        </button>
+        <button type="button" class="k-button k-button-icontext wd-k-danger w-border">
+            <span class="k-sprite k-icon k-edit"></span>danger
+        </button>
+    </div>
+    <h3>4、grid</h3>
+    <div id="orders" class="ra-section"></div>
+    <h3>5、tree</h3>
+    <div id="treeview"></div>
+    <h3>6、tab</h3>
+    <div id="tabstrip" class="ra-section">
+        <ul>
+            <li class="k-state-active"><span class="km-icon revenue"></span><span class="hidden-xs">Revenue</span></li>
+            <li><span class="km-icon spd"></span><span class="hidden-xs">Sales / day</span></li>
+            <li><span class="km-icon spr"></span><span class="hidden-xs">Sales / region</span></li>
+            <li><span class="km-icon share"></span><span class="hidden-xs">Market share</span></li>
+        </ul>
+        <div>
+            <div id="revenue">111</div>
+        </div>
+        <div>
+            <div id="sales-per-day">222</div>
+        </div>
+        <div>
+            <div id="sales-per-region">333</div>
+        </div>
+        <div>
+            <div id="market-alice-mutton" class="market-donut">444</div>
+            <div id="market-gravad-lax" class="market-donut">555</div>
+            <div id="market-inlagd-sill" class="market-donut">666</div>
+            <div id="market-spegesild" class="market-donut">777</div>
+        </div>
+    </div>
+    <h3>7、面板</h3>
+    <div class="panel panel-primary">
+        <div class="panel-heading">Panel heading without title</div>
+        <div class="panel-body">
+            Panel content
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Panel heading without title</div>
+        <div class="panel-body">
+            Panel content
+        </div>
+    </div>
+
+    <ul id="panelbar" style="margin-bottom:20px;">
+        <li class="k-state-active">
+            面板一
+            <ul>
+                <li>1.第一行第一行第一行第一行</li>
+                <li>2.第二行第二行第二行第二行</li>
+                <li>3.第三行第三行第三行第三行</li>
+            </ul>
+        </li>
+        <li>面板二
+            <div>
+                <div class="form-horizontal form-widgets col-sm-4">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="name">姓名</label>
+                        <div class="col-sm-8 col-md-6">
+                            <input value="Johnatan Dodsworth"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="birthday">生日</label>
+                        <div class="col-sm-8 col-md-6">
+                            <input type="date" value="10/09/1979"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="experience">爱好</label>
+                        <div class="col-sm-8 col-md-6">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="option1"> 篮球
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="option2"> 羽毛球
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal form-widgets col-sm-4">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="gender">性别</label>
+                        <div class="col-sm-8 col-md-6">
+                            <select>
+                                <option selected>男</option>
+                                <option>女</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="occupation">工作</label>
+                        <div class="col-sm-8 col-md-6">
+                            <input placeholder="e.g. Developer"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="language">是否有效</label>
+                        <div class="col-sm-8 col-md-6">
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" value="option1"> 1
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" value="option2"> 2
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal form-widgets col-sm-3">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="experience">工作年限</label>
+                        <div class="col-sm-8 col-md-6">
+                            <input type="number" value="4"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="language">语言</label>
+                        <div class="col-sm-8 col-md-6">
+                            <select>
+                                <option selected>英语</option>
+                                <option>德语</option>
+                                <option>汉语</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <h3>8、导航路径</h3>
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+    </ol>
+    <div class="wd-breadcrumb">
+        <a href="#">首页</a> >
+        <a href="#">频道</a> >
+        <a class="active" href="#">内容页</a>
+    </div>
+    <h3>9、时间控件</h3>
+
+    <fieldset>
+        <legend>时间控件</legend>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">起始time:</label>
+                <div class="col-sm-6 col-md-6">
+                    <input id="startTimeId"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">结束time:</label>
+                <div class="col-sm-6 col-md-6">
+                    <input id="endTimeId"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">起始Date:</label>
+                <div class="col-sm-6 col-md-6">
+                    <input id="startDateId"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">结束Date:</label>
+                <div class="col-sm-6 col-md-6">
+                    <input id="endDateId"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">测试1time:</label>
+                <div class="col-sm-6 col-md-6">
+                    <input id="testTimeId1"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">测试2time:</label>
+                <div class="col-sm-6 col-md-6">
+                    <input id="testTimeId2"/>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+</div>
+<script  src="lib/require.js"></script>
+<script type="text/javascript">
+    $("#menu").wandaMenu();
+
+    $("#orders").wandaGrid({
+        dataSource: {
+            type: "odata",
+            transport: {
+                read: "http://demos.wondersgroup.com/wanda-ui/service/Northwind.svc/Orders"
+            },
+            serverPaging: true,
+            serverSorting: true,
+            serverFiltering: true,
+            pageSize: 10
+        },
+        scrollable: false,
+        sortable: true,
+        groupable: true,
+        pageable: {buttonCount: 4},
+        columns: [
+            {field: "OrderID", width: "70px"},
+            {field: "ShipCountry", title: "Ship Country", width: "20%"},
+            {field: "ShipAddress", title: "Ship Address"}
+        ]
+    });
+
+    $("#example .form-widgets")
+            .find("select:not([multiple])").wandaDropDownList().end()
+            .find("select[multiple]").wandaMultiSelect().end()
+            .find("input:not([type])").addClass("k-textbox").end()
+            .find("input[type=date]").wandaDatePicker().end()
+            .find("input[type=number]").wandaNumericTextBox({
+        format: "0 years"
+    });
+    function resizeTabStripContent() {
+        wanda.resize("#tabstrip");
+    }
+
+    $("#tabstrip").wandaTabStrip({
+        animation: {
+            open: {effects: "fadeIn"}
+        }
+    });
+    $("#treeview").wandaTreeView({
+        dataSource: [{
+            id: 1, text: "My Documents", items: [
+                {
+                    id: 2, text: "wanda UI Project", items: [
+                    {id: 3, text: "about.html"},
+                    {id: 4, text: "index.html"},
+                    {id: 5, text: "logo.png"}
+                ]
+                },
+                {
+                    id: 6, text: "New Web Site", items: [
+                    {id: 7, text: "mockup.jpg"},
+                    {id: 8, text: "Research.pdf"},
+                ]
+                },
+                {
+                    id: 9, text: "Reports", items: [
+                    {id: 10, text: "February.pdf"},
+                    {id: 11, text: "March.pdf"},
+                    {id: 12, text: "April.pdf"}
+                ]
+                }
+            ]
+        }]
+    });
+    $("#panelbar").wandaPanelBar();
+
+    require.config({
+        paths: {
+            "jquery": "lib/wandaui/js/jquery.min",
+            "nicescroll": "lib/jquery.nicescroll.min",
+            "wanda": "lib/wandaui/js/wanda.all.min",
+            "wandaCulture": "lib/wandaui/js/cultures/wanda.culture.zh-CN.min",
+            "main": "lib/main",
+            "common": "lib/common",
+            "wandaComp": "lib/wandaComp",
+            "wandaCompR": "lib/wandaCompReUse",
+            /*"myDatePicker": "lib/myDatePicker",*/
+            "date_time_Picker": "lib/date_time_Picker",
+            "jqConfirm": "lib/jqconfirm/jquery-confirm.min",
+            "echarts": 'lib/echart3/echarts.min'
+        }
+    });
+
+    require(["lib/date_time_Picker.js"], function (myDatePicker) {
+        var endDateTime = new Date();
+        var endTime = endDateTime.getTime();
+        var startTime = endTime - 24 * 60 * 60 * 1000;
+        var startDateTime = new Date(startTime);
+        var interval = 30;
+
+        var startDateTimePicker = new myDatePicker.wandaDateTimePicker("startTimeId", startDateTime, interval);
+        startDateTimePicker.init();
+        startDateTimePicker.getwandaDateTimePicker();
+
+        var endDateTimePicker = new myDatePicker.wandaDateTimePicker("endTimeId", endDateTime, 15);
+        endDateTimePicker.init();
+        endDateTimePicker.getwandaDateTimePicker();
+
+        var validatewandaDateTimePicker = new myDatePicker.validate("wandaDateTimePicker", "startTimeId", "endTimeId");
+        validatewandaDateTimePicker.init();
+
+
+        var endDate1 = new Date();
+        var endTime1 = endDate1.getTime();
+        var startTime1 = endTime1 - 24 * 60 * 60 * 1000;
+        var startDate1 = new Date(startTime1);
+
+
+        var startwandaDatePicker = new myDatePicker.wandaDatePicker("startDateId", startDate1);
+        startwandaDatePicker.init();
+        startwandaDatePicker.getwandaDatePicker();
+
+        var endwandaDatePicker = new myDatePicker.wandaDatePicker("endDateId", endDate1);
+        endwandaDatePicker.init();
+        endwandaDatePicker.getwandaDatePicker();
+
+        var validatewandaDatePicker = new myDatePicker.validate("wandaDatePicker", "startDateId", "endDateId");
+        validatewandaDatePicker.init();
+
+
+        var testTime1 = new myDatePicker.wandaDateTimePicker("testTimeId1", null, 15);
+        testTime1.init();
+
+        var today = wanda.date.today();//当前日0点时间
+        var testTime2 = new myDatePicker.wandaDateTimePicker("testTimeId2", today, 15);
+        testTime2.init();
+    });
+
+
+</script>
+</body>
+</html>

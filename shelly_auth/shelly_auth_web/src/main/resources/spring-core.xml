@@ -1,0 +1,193 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd">
+
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:/db-oracle.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 数据源定义，对于正式系统，建议使用中间件的jndi数据源 -->
+	<bean id="dataSourceForCen" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<property name="driverClassName" value="${db.driver}"></property>
+		<!-- 基本属性 url、user、password -->
+		<property name="url" value="${db.url}"></property>
+		<property name="username" value="${db.username}"></property>
+		<property name="password" value="${db.password}"></property>
+		<!-- 配置初始化大小、最小、最大 -->
+		<property name="initialSize" value="${db.pool.init}" />
+		<property name="maxActive" value="${db.pool.max}"></property>
+		<property name="minIdle" value="${db.pool.min}"></property>
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000"></property>
+		<property name="defaultAutoCommit" value="true"></property>
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<property name="validationQuery" value="SELECT 'x' FROM DUAL" />
+		<property name="testWhileIdle" value="false" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="20" />
+		<!-- 配置监控统计拦截的filters -->
+		<property name="filters" value="stat" />
+	</bean>
+	
+	<!--动态数据源相关-->
+    <bean id="dynamicDataSource" class="com.wondersgroup.portal.datasourceswitch.impl.DynamicDataSource">
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <entry key="defaultDataSource" value-ref="dataSourceForCen"/>
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="dataSourceForCen"/>
+    </bean>
+
+	<!-- 以下两项为jdbc支持 -->
+	<!-- <bean id="namedjdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate"> 
+		<constructor-arg ref="dataSource" /> </bean> -->
+
+	<!-- <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+		<property name="dataSource" ref="dataSource"></property> </bean> -->
+
+	<!-- hibernate -->
+	<!-- <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
+		<property name="dataSource"> <ref bean="dataSource" /> </property> <property 
+		name="hibernateProperties"> <props> <prop key="hibernate.dialect">${hibernate.dialect}</prop> 
+		<prop key="hibernate.show_sql">false</prop> <prop key="hibernate.format_sql">false</prop> 
+		<prop key="hibernate.hbm2ddl.auto">none</prop> <prop key="hibernate.connection.release_mode">after_transaction</prop> 
+		<prop key="current_session_context_class">thread</prop> </props> </property> 
+		使用包扫描的方式做为替换，推荐这种 <property name="packagesToScan"> <list> <value>com.wondersgroup.**.model</value> 
+		</list> </property> </bean> -->
+
+
+	<!-- JPA -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dynamicDataSource" />
+		<!-- 扫描实体路径 -->
+		<property name="packagesToScan">
+			<list>
+				<value>com.wondersgroup.**.model</value>
+			</list>
+		</property>
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="showSql" value="true" />
+				<property name="generateDdl" value="false" />
+			</bean>
+		</property>
+		<property name="jpaProperties">
+			<props>
+				<!--设置外连接抓取树的最大深度 -->
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<prop key="hibernate.jdbc.fetch_size">18</prop>
+				<prop key="hibernate.jdbc.batch_size">10</prop>
+				<!-- 自动建表类型 validate|create|create-drop|update -->
+<!-- 				<prop key="hibernate.hbm2ddl.auto">update</prop> -->
+				<prop key="hibernate.default_schema">DATASAFETY_DB</prop>
+				<!-- 是否显示SQL -->
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- 显示SQL是否格式化 -->
+				<prop key="hibernate.format_sql">true</prop>
+				<!-- 关闭二级缓存 -->
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+				<!-- 关闭实体字段映射校验 -->
+				<prop key="javax.persistence.validation.mode">none</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<!-- 注入事务(Spring + JPA) -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="dataSource" ref="dynamicDataSource" />
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<bean
+		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"></bean>
+	<bean
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"></bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10000000" />
+	</bean>
+
+	<!-- 注入事务(Spring + Hibernate) -->
+	<!-- <bean id="transactionManager2" class="org.springframework.orm.hibernate4.HibernateTransactionManager"> 
+		<property name="sessionFactory" ref="sessionFactory"></property> </bean> 
+		<tx:advice id="txAdvice" transaction-manager="transactionManager2"> <tx:attributes> 
+		<tx:method name="save*" read-only="false" propagation="REQUIRED" rollback-for="java.lang.Exception" 
+		/> <tx:method name="del*" read-only="false" propagation="REQUIRED" rollback-for="java.lang.Exception" 
+		/> <tx:method name="update*" read-only="false" propagation="REQUIRED" rollback-for="java.lang.Exception" 
+		/> <tx:method name="post*" read-only="false" propagation="REQUIRED" rollback-for="java.lang.Exception" 
+		/> <tx:method name="add*" read-only="false" propagation="REQUIRED" rollback-for="java.lang.Exception" 
+		/> <tx:method name="insert*" read-only="false" propagation="REQUIRED" rollback-for="java.lang.Exception" 
+		/> <tx:method name="append*" read-only="false" propagation="REQUIRED" rollback-for="java.lang.Exception" 
+		/> <tx:method name="*" read-only="true" /> </tx:attributes> </tx:advice> -->
+
+	<!-- <aop:config proxy-target-class="true"> <aop:advisor pointcut="execution(* 
+		com.wondersgroup.*..*.service.*impl.*(..))" advice-ref="txAdvice" /> </aop:config> -->
+	<context:component-scan base-package="com.wondersgroup.ws" />
+	<context:component-scan base-package="com.wondersgroup.**.service" />
+	<!--<context:component-scan base-package="dubbo" /> -->
+
+<!-- 	CXF实现webservice配置 -->
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<bean class="com.wondersgroup.common.utils.Jsr181HandlerMapping">
+		<property name="urlPrefix" value="/"></property>
+	</bean>
+	<!-- 自动导入各种服务实现 -->
+	<import resource="classpath*:spring-ws-*.xml" />
+	<!-- 导入dubbo配置 -->
+	<!--<import resource="classpath*:spring-dubbo.xml" /> -->
+
+	<!-- 定时器 -->
+	<!-- <bean id="job"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="createTableTaskController" />
+		<property name="targetMethod" value="createTable" />
+	</bean>
+	<bean id="time"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="job" />
+		<property name="cronExpression">
+			每天23点
+			<value>0 0 23 * * ?</value>
+			<value>0 0 23 * * ?</value>
+		</property>
+	</bean>
+
+	<bean id="scheduler" lazy-init="false"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="time" />
+			</list>
+		</property>
+	</bean> -->
+
+</beans>

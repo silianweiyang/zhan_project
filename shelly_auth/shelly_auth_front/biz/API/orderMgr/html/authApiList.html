@@ -1,0 +1,69 @@
+<div id="APIAuthList">
+    <input type="hidden" id="APIAuthList_orderServiceId"/>
+    <input type="hidden" id="APIAuthList_publishServiceId"/>
+    <input type="hidden" id="APIAuthList_orderState"/>
+    <input type="hidden" id="APIAuthList_serverName"/>
+    <input type="hidden" id="APIAuthList_orgName"/>
+    <input type="hidden" id="APIAuthList_orgId"/>
+    <div class="col-lg-12 search-owe">
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">API名称:</label>
+                <div class="col-xs-8">
+                    <input id="APIAuthList_name" placeholder="请输入API名称" class="k-textbox"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4  p0">API状态:</label>
+                <div class="col-xs-8">
+                    <input id="APIAuthList_state"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4 col-md-4 col-lg-3">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="APIAuthList_SearchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+                <!--<div id="advancedSrhBtn" class="search_tex col-sm-2 p0" style="width: 30%;margin-left: 25px;">
+                    <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;高级搜索&nbsp;&nbsp;
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <!--Button组-->
+    <div class="col-lg-12 button-owe">
+        <div class="fr">
+            <button type="button" class="btn btn_add btn_add1 btn_add2" id="APIAuthList_authBtn">
+                <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>授权通过
+            </button>
+            <button type="button" class="btn btn_delete btn_delete1 btn_delete2" id="APIAuthList_refuseAuthBtn">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>授权撤销
+            </button>
+            <button id="APIAuthList_closeBtn" type="button" opt="cancel" class="btn btn_pre btn_pre1 btn_pre2">
+                <i class="fa fa-arrow-circle-o-left fa_icon1 fa_icon_white p3"></i>返回
+            </button>
+            <button type="button" class="btn btn_delete btn_delete1 btn_delete2" style="display: none" id="APIFound_hideBtn">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="col-lg-12 grid-owe">
+        <div id="APIAuthListGrid"></div>
+        <div id="APIAuthListGridPager"></div>
+    </div>
+
+
+    <div id="APIAuthList_authPopup"></div>
+    <div id="APIAuthList_plusPopup"></div>
+
+</div>
+<script type="text/javascript">
+    require(["biz/API/orderMgr/js/authApiList"], function (authList) {
+        authList.init();
+    });
+</script>

@@ -1,0 +1,107 @@
+<style>
+    #AuthList .k-tabstrip .k-content.k-state-active {
+        background-color: #fff;
+        color: #333;
+        border: 1px solid white;
+    }
+
+    #AuthList .k-panelbar .k-tabstrip > .k-content, .k-tabstrip > .k-content {
+        position: static;
+        border-style: solid;
+        border-width: 1px;
+        margin: 0 .286em .3em;
+        padding: 0;
+        zoom: 1;
+    }
+    #AuthList .k-tabstrip-wrapper > .k-widget, .k-tabstrip-wrapper > .k-widget *,.k-tabstrip-wrapper > .k-widget :before{
+        -webkit-box-sizing: border-box !important;
+        box-sizing:border-box !important;
+    }
+</style>
+<div id="AuthList">
+    <div class="col-lg-12 search-owe">
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4  p0">发布应用名称:</label>
+                <div class="col-xs-8">
+                    <input id="AuthList_serverName"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4 p0">订阅归属单位:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input type="hidden" id="AuthList_orgId"/>
+                    <div class="input-group">
+                        <input class="form-control" id="AuthList_orgName" name="orgName"
+                               placeholder="请选择应用归属" onfocus=this.blur(); />
+                        <span id="AuthList_orgSearch" class="input-group-addon"><i class="fa fa-search search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4 col-md-4 col-lg-3">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="AuthList_SearchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+                <!--<div id="advancedSrhBtn" class="search_tex col-sm-2 p0" style="width: 30%;margin-left: 25px;">
+                    <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;高级搜索&nbsp;&nbsp;
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <!--Button组-->
+    <div class="col-lg-12 button-owe">
+        <div class="fr">
+            <button type="button" class="btn btn_add btn_add1 btn_add2" id="AuthList_authBtn">
+                <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>授权通过
+            </button>
+            <button type="button" class="btn btn_delete btn_delete1 btn_delete2" id="AuthList_refuseAuthBtn">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>授权撤销
+            </button>
+        </div>
+    </div>
+
+
+    <!--tabstrip-->
+    <div id="tabstrip" class="col-lg-12 grid-owe" style="position: inherit;display: none;">
+        <ul>
+            <!--<li class="k-state-active">&nbsp;&nbsp;&nbsp;&nbsp;全部&nbsp;&nbsp;&nbsp;&nbsp;</li>-->
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;待审批&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;已通过&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;已拒绝&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        </ul>
+        <!-- <div>
+             <div class="col-lg-12 grid-owe">
+                 <div id="AuthListGrid"></div>
+                 <div id="AuthListGridPager"></div>
+             </div>
+         </div>-->
+        <div>
+            <div id="AuthListGrid0"></div>
+            <div id="AuthListGrid0Pager"></div>
+        </div>
+        <div>
+            <div id="AuthListGrid1"></div>
+            <div id="AuthListGrid1Pager"></div>
+        </div>
+        <div>
+            <div id="AuthListGrid2"></div>
+            <div id="AuthListGrid2Pager"></div>
+        </div>
+    </div>
+
+
+    <div id="AuthList_authPopup"></div>
+
+
+</div>
+<script type="text/javascript">
+    require(["biz/API/orderMgr/js/authList"], function (authList) {
+        authList.init();
+    });
+</script>

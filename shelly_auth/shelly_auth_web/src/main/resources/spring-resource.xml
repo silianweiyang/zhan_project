@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	
+	<!-- 容器默认的DefaultServletHandler处理 所有静态内容与无RequestMapping处理的URL-->
+	<!-- 正式环境需要加上cache-period以便浏览器缓存 -->
+	<mvc:resources location="/js/,classpath:/js/" mapping="/js/**" cache-period="31536000"/>
+	<mvc:resources location="/css/,classpath:/css/" mapping="/css/**" cache-period="31536000"/>
+	<mvc:resources location="/images/,classpath:/images/" mapping="/images/**" cache-period="31536000"/>
+	<mvc:resources location="/web/,classpath:/web/" mapping="/**" cache-period="31536000"/>
+		
+	<!-- 将Controller抛出的异常转到特定View, 保持SiteMesh的装饰效果 -->
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">  
+		<property name="exceptionMappings">  
+			<props>
+				<prop key="java.lang.Throwable">error/500</prop>
+            </props>  
+		</property>  
+    </bean> 
+    
+	<!-- end -->
+</beans>

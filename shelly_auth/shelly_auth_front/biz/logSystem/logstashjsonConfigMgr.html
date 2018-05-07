@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>新增采集配置</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<div id="logstashjsonConfigMgr">
+
+    <input type="hidden" id="isAdd"/>
+    <input type="hidden" id="menuCode"/>
+    <input type="hidden" id="recordId"/>
+
+    <div class="col-lg-12 buttons-wrap mt10" style="display: none" id="backButonDiv">
+        <button type="button" class="btn btn_add btn_add1 btn_add2" id="backButon">
+            <i class="fa fa-arrow-circle-o-left fa_icon1 fa_icon_white p3"></i>返回
+        </button>
+    </div>
+
+    <div class="col-sm-12 col-lg-12"><h3 class="title_service fl">基本信息</h3></div>
+    <div class="col-lg-12 p0">
+        <div class="form-horizontal col-xs-4 col-lg-3 mt10">
+            <div class="form-group">
+                <label class="control-label col-xs-4"><em class="color_red">*</em>采集代理:</label>
+                <div class="col-xs-8">
+                    <input id="serviceId"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>采集名称:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="name" class="k-textbox" placeholder="请输入名称"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="form-horizontal col-xs-4 col-lg-3">
+             <div class="form-group">
+                 <label class="control-label col-xs-4"><em class="color_red">*</em>是否监控:</label>
+                 <div class="col-xs-8">
+                     <input id="isMonitor"/>
+                 </div>
+             </div>
+         </div>-->
+    </div>
+
+    <!--input-->
+
+    <div class="col-sm-12 col-lg-12"><h3 class="title_service fl">数据源配置</h3></div>
+    <div class="col-lg-12  p0">
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>类型:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="input_type" style="height:29px"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>日志标识:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="input_logId" class="k-textbox" placeholder="请输入日志标识"/>
+                </div>
+            </div>
+        </div>
+        <div id="input_fileDiv">
+            <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>文件路径:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input id="input_path" class="k-textbox" placeholder="请输入文件路径"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="input_kafkaDiv">
+            <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>URL地址:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input id="input_url" class="k-textbox" placeholder="请输入URL地址"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>组名称:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input id="input_group" class="k-textbox" placeholder="请输入组名称"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>主题名称:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input id="input_topic" class="k-textbox" placeholder="请输入主题名称"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="input_httpDiv">
+            <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>IP地址:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input id="input_host" class="k-textbox" placeholder="请输入服务IP地址"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>端口号:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input id="input_port" class="k-textbox" placeholder="请输入服务端口号"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--filter-->
+    <!-- <fieldset>
+     <legend>filter</legend>
+     <div class="col-lg-12">
+         <div class="form-group form-horizontal col-sm-4  col-md-4 col-lg-3">
+             <label class="control-label col-sm-4 col-md-4">tag:</label>
+             <div class="col-sm-8 col-md-8">
+                 <input id="filter_tag" class="k-textbox"/>
+             </div>
+         </div>
+         <div class="form-group form-horizontal col-sm-4  col-md-4 col-lg-3">
+             <label class="control-label col-sm-4 col-md-4">match:</label>
+             <div class="col-sm-8 col-md-8">
+                 <input id="filter_match" class="k-textbox"/>
+             </div>
+         </div>
+     </div>
+ </fieldset>-->
+    <!--output-->
+
+    <div class="col-sm-12 col-lg-12"><h3 class="title_service fl">输出配置</h3></div>
+    <div class="col-lg-12 p0">
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>输出类型:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="output_type"/>
+                </div>
+            </div>
+        </div>
+
+        <div id="output_urlDiv" class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>URL地址:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="output_url" class="k-textbox" placeholder="请输入URL地址"/>
+                </div>
+            </div>
+        </div>
+
+        <div id="output_topicDiv" class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>主题名称:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="output_topic" class="k-textbox" placeholder="请输入主题名称"/>
+                </div>
+            </div>
+        </div>
+        <div id="output_esDiv">
+            <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>IP地址:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input id="output_host" class="k-textbox" placeholder="请输入服务IP地址"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>索引名称:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input id="output_index" class="k-textbox" placeholder="请输入索引名称"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>文档名称:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input id="output_doc" class="k-textbox" placeholder="请输入文档名称"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="output_methodDiv" class="form-horizontal col-sm-4  col-md-4 col-lg-3 mt10">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4"><em class="color_red">*</em>提交方法:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="output_method"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--button-->
+    <div class="col-md-12 col-xs-12 p10 editNoShow" align="center">
+        <button type="button" class="btn btn_pre btn_pre1 btn_pre2" id="saveCloseBtn">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>保存并关闭
+        </button>
+        <button type="button" class="btn btn_cancel btn_cancel1 btn_cancel2" id="closeBtn">
+            <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_blue p3"></i>取消
+        </button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require(["biz/logSystem/logstashjsonConfigMgr"], function (logstashjsonConfigMgr) {
+        logstashjsonConfigMgr.init();
+    });
+</script>
+
+</body>
+
+</html>

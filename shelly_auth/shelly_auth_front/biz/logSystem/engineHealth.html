@@ -1,0 +1,106 @@
+<style>
+    #engineHealth .online {
+        color:#008800
+    }
+    #engineHealth .offline i{
+        color:#999;
+    }
+    #engineHealth .online img{
+        -moz-transition:all .10s;
+        -webkit-transition:all .10s;
+        transition:all .10s;
+        -moz-animation:rotate 10s infinite linear;
+        -webkit-animation:rotate 10s infinite linear;
+        animation:rotate 10s infinite linear;
+
+        -webkit-transform: rotateZ(-360deg);
+        -moz-transform: rotateZ(-360deg);
+        -o-transform: rotateZ(-360deg);
+        -ms-transform: rotateZ(-360deg);
+        transform: rotateZ(-360deg);
+    }
+
+    @-moz-keyframes rotate{
+        100%{
+            -moz-transform:rotate(0deg);
+        }
+        100%{
+            -moz-transform:rotate(360deg);
+        }
+    }
+    @-webkit-keyframes rotate{
+        100%{
+            -webkit-transform:rotate(0deg);
+        }
+        100%{
+            -webkit-transform:rotate(360deg);
+        }
+    }
+    @keyframes rotate{
+        100%{
+            transform:rotate(0deg);
+        }
+        100%{
+            transform:rotate(360deg);
+        }
+    }
+</style>
+<div id="engineHealth">
+    <div class="col-lg-12 search-owe">
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">IP地址:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="gateHost" class="k-textbox" placeholder="请输入IP地址"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">运行状态:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="gateStatus"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="searchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-12 hide" style="text-align:right;margin-top: 10px;">
+        <button type="button" class="btn btn_add btn_add1 btn_add2" id="backButon">
+            <i class="fa fa-arrow-circle-o-left fa_icon1 fa_icon_white p3"></i>返回
+        </button>
+    </div>
+
+    <!--Button组-->
+    <div class="col-lg-12 button-owe">
+        <div class="fr">
+            <button type="button" id="engineHealth_delBtn" class="btn btn_delete btn_delete1 btn_delete2">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>删除
+            </button>
+        </div>
+    </div>
+    <!--列表-->
+    <div class="col-lg-12 grid-owe">
+        <div id="engineHealthGrid"></div>
+        <div id="engineHealthGridPager"></div>
+    </div>
+    <!--弹出窗口-->
+    <div id="engineHealth_addPopup"></div>
+    <div id="engineHealth_editPopup"></div>
+
+</div>
+<script type="text/javascript">
+    require(["biz/logSystem/engineHealth"], function (engineHealth) {
+        engineHealth.init();
+    });
+</script>

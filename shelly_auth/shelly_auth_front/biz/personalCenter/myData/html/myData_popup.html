@@ -1,0 +1,76 @@
+<style>
+    .hidenStyle{
+        display: none;
+    }
+    .showStyle{
+        display: block;
+    }
+    .searchItem{
+        width:18%;display: block;float:left;padding-left: 10px;
+    }
+    .searchItemBig{
+        width:19%;display: block;float:left;padding-left: 10px;
+    }
+    .addConditionBtn{
+        margin-left: 30px;
+    }
+    .selectCss{
+        height: 25px;margin-top: 3px;width:90%;
+    }
+    .inputCss{
+        height: 22px;margin-top: 3px;
+    }
+    .clearfloat{clear:both;height:0;font-size: 1px;line-height: 0px;}
+    .inputItem{
+        width:18%;display: block;float:left;padding-left: 10px;
+    }
+</style>
+<div id="tableDataInfo" class="form-group source-table-list" style="height: 550px;">
+    <div style="width:100%;height:50px;display: block;">
+        <label id="dataInfo_dataSourceName" style="float: left; width:30%;height: 30px;font-size: 14px;margin-top: 3px;margin-left: 10px;"></label>
+        <label style="width:60%;margin-top: 13px;font-size: 14px;color: red;" id="dataInfo_authEndTime"></label>
+    </div>
+    <div style="width: 100%;height:auto!important;border-top:1px solid grey;" id="searchDiv">
+        <div id="dataInfo_search" style="width: 80%;height: auto; border-right:1px solid grey;float: left;">
+            <div name="dataInfo_searchItem" style="width:100%;height: 40px;float: left;margin-top: 5px;">
+                <div class="searchItem" style="height: 25px;line-height: 35px;vertical-align: middle;font-size: 16px;">查询条件:</div>
+                <div class="searchItem">
+                    <select class="selectCss">
+                        <option>请选择字段</option>
+                        <option>字段1</option>
+                    </select>
+                </div>
+                <div class="searchItem">
+                    <select class="selectCss">
+                        <option>请选择条件</option>
+                        <option>大于</option>
+                        <option>小于</option>
+                        <option>等于</option>
+                    </select>
+                </div>
+                <div class="inputItem">
+                    <input type="text" style="width: 80%;"class="inputCss" />
+                </div>
+                <div class="searchItem" style="width:15%; margin-left: 1%;">
+                    <button type="button" id="addCondition_btn" style="display: block;float: left;" class="search_btn search_btn1 col-lg-12 p0" >增加条件</button>
+                </div>
+            </div>
+        </div>
+        <div id="dataInfo_searchBtnDiv" style="width: 19%;min-height:40px;height:auto!important;float: left;">
+            <button type="button" id="dataInfo_searchBtn" opt="search" class="search_btn search_btn1 col-lg-8 col-md-3 p0" style="margin-top: 5px;margin-left: 10px;" >
+                <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+            </button>
+        </div>
+        <button type="button"  id="deleteSearchCondition" class="search_btn search_btn1 col-lg-8 col-md-3 p0" style="display:none;margin-top: 5px;margin-left: 10px;" >
+            <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>删除条件按钮
+        </button>
+        <div class="clearfloat"></div>
+    </div>
+    <!--列表-->
+    <div class="col-lg-12 grid-owe" id="dataListDiv" style="border-top: 1px solid grey;margin-top: 0px;">
+        <div id="dataListGrid"></div>
+        <div id="dataListGridPager"></div>
+    </div>
+</div>
+
+

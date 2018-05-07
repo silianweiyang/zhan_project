@@ -1,0 +1,53 @@
+<style>
+    #decidePopup .table>tbody>tr.success>td{
+        background-color: inherit;
+        color:#000;
+    }
+    #decidePopup .k-tabstrip-items .k-state-active .k-link {
+        color: #000000;
+        background-color: #ffffff;
+    }
+</style>
+<div id="decidePopup" style="max-width: 1200px;" class="row">
+    <input type="hidden" id="decidePopup_operatorId"/>
+    <input type="hidden" id="decidePopup_objId"/>
+    <div class="col-xs-12 p0" style="width: 99%">
+        <div class="form-horizontal col-xs-4 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-3 p0"><em
+                        class="color_red">*</em>节点名称:</label>
+                <div class="col-xs-7">
+                    <input id="decidePopup_name" name="decidePopup_name" class="k-textbox" validate="[required]" maxlength="100"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-8 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0">节点描述:</label>
+                <div class="col-xs-9">
+                    <input id="decidePopup_desc" class="k-textbox"  maxlength="300"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-12 p0">
+            <div class="form-group">
+                <label class="control-label col-xs-1 p0" style="width: 8.9%"><em
+                        class="color_red">*</em>条件设置:</label>
+                <div class="col-xs-10" style="width: 86%">
+                    <div id="decidePopup_tabstrip"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Button组-->
+    <div class="col-xs-12 p10" align="center">
+        <button id="decidePopup_cancel" opt="cancel" type="button"  class="btn btn_cancel btn_cancel1 btn_cancel2">
+            <i class="fa fa-arrow-circle-o-up fa_icon1 fa_icon_white fa_icon_pink p3"></i>取消
+        </button>&nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <button id="decidePopup_saveBtn" type="button" opt="submit" class="btn btn_pre btn_pre1 btn_pre2">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>确定
+        </button>
+    </div>
+</div>
+

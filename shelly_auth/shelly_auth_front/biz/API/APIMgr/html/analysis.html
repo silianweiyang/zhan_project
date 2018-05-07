@@ -1,0 +1,182 @@
+<style>
+    #analysis .chartDiv {
+        height: 500px;
+        padding: 30px 23px 10px;
+        border-style: solid;
+        border-color: #eaeaea;
+    }
+
+    #analysis .nodataChart {
+        line-height: 400px;
+        /*border: 1px solid #eaeaea;*/
+        margin: 10px;
+        text-align: center;
+        font-size: 12px;
+        display: none;
+    }
+
+    #analysis .inquire ul li {
+        line-height: 35px;
+        color: #666;
+        cursor: pointer;
+    }
+
+    #analysis .inquire ul li span {
+        display: inline-block;
+        line-height: 25px;
+        padding: 0px 10px;
+        background: #e3e3e3;
+        text-align: center;
+        margin-right: 15px;
+    }
+
+    #analysis .inquire ul li span.condition1::before {
+        content: "";
+        font-family: 'FontAwesome';
+        font-size: 24px;
+        font-size: 1.84615rem;
+        content: '\f0da';
+        color: #e3e3e3;
+        position: absolute;
+        top: 20px;
+        left: 82px;
+    }
+
+    #analysis .inquire ul li span.condition2::before {
+        content: "";
+        font-family: 'FontAwesome';
+        font-size: 24px;
+        font-size: 1.84615rem;
+        content: '\f0da';
+        color: #e3e3e3;
+        position: absolute;
+        top: 55px;
+        left: 82px;
+    }
+
+    #analysis .inquire ul li span.condition3::before {
+        content: "";
+        font-family: 'FontAwesome';
+        font-size: 24px;
+        font-size: 1.84615rem;
+        content: '\f0da';
+        color: #e3e3e3;
+        position: absolute;
+        top: 90px;
+        left: 82px;
+    }
+
+    #analysis .inquire ul li a {
+        display: inline-block;
+        padding: 0px 10px;
+        color: #666;
+    }
+
+    #analysis .inquire ul li a.active {
+        display: inline-block;
+        line-height: 25px;
+        background: #095da5;
+        color: #fff;
+        text-align: center;
+        padding: 0px 10px;
+        border-radius: 2px;
+    }
+</style>
+
+<div id="analysis">
+    <input type="hidden" id="apiId"/>
+    <input type="hidden" id="menuCode"/>
+    <input type="hidden" id="analysis_queryParam"/>
+    <div class="col-lg-12 search-owe" style="overflow: hidden;">
+
+        <div class="form-horizontal col-xs-12 col-lg-12 generalSrh">
+            <div class="inquire col-xs-2 p0" style="width: 20%">
+                <ul>
+                    <input type="hidden" id="timeRangeCond"/>
+                    <li id="timeRange" class="col-xs-12 p0">
+                        <span class="condition3">时间</span>
+                        <a class="active" value="day">一天内</a>
+                        <a value="month">一月内</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: none;margin-top: 3px;" id="analysis_hignSearchDiv">
+                <div class="col-xs-3 p0">
+                    <label class="control-label col-xs-3 p0"><em
+                            class="color_red">*</em>开始日期:</label>
+                    <div class="col-xs-9">
+                        <input id="analysis_startTime"/>
+                    </div>
+                </div>
+                <div class="col-xs-3 p0">
+                    <label class="control-label col-xs-3 p0"><em
+                            class="color_red">*</em>结束日期:</label>
+                    <div class="col-xs-9">
+                        <input id="analysis_endTime"/>
+                    </div>
+                </div>
+                <div class="col-xs-1 p0">
+                    <button type="button" id="analysis_SearchBtn" class="search_btn search_btn1 col-lg-11 col-md-11 p0">
+                        <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                    </button>
+                </div>
+            </div>
+            <div id="advancedSrhBtn" class="search_tex col-sm-3 p0" style="margin-left: 25px;margin-top: 2px;">
+                <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;高级搜索&nbsp;&nbsp;
+            </div>
+        </div>
+
+
+        <!--<div class="form-horizontal col-xs-4 col-lg-3 generalSrh">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">统计周期:</label>
+                <div class="col-xs-8">
+                    <input id="analysis_times"/>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- <div class="form-horizontal col-sm-4 col-md-4 col-lg-3">
+             <div class="form-group" style="padding-left:25px;">
+                 <button type="button" id="analysis_SearchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                     <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                 </button>
+             </div>
+         </div>-->
+    </div>
+
+    <div class="col-lg-12 button-owe">
+        <div class="fr">
+            <button type="button" class="btn btn_pre btn_pre1 btn_pre2" id="analysis_backBtn">
+                <i class="fa fa-arrow-circle-o-left fa_icon1 fa_icon_white p3"></i>返回
+            </button>
+        </div>
+    </div>
+
+    <div class="col-lg-12 grid-owe">
+        <div class="col-lg-6 chartDiv" style="border-width:1px 0;">
+            <div id="analysisChart1" style="width:540px;height: 460px"></div>
+            <div class="nodataChart">无数据！</div>
+        </div>
+        <div class="col-lg-6 chartDiv" style="border-width:1px 0 1px 1px;">
+            <div id="analysisChart2" style="width:540px;height: 460px"></div>
+            <div class="nodataChart">无数据！</div>
+        </div>
+        <div class="col-lg-6 chartDiv" style="border-width:0 0 1px 0;">
+            <div id="analysisChart3" style="width:540px;height: 460px"></div>
+            <div class="nodataChart">无数据！</div>
+        </div>
+        <div class="col-lg-6 chartDiv" style="border-width:0 0 1px 1px;">
+            <div id="analysisChart4" style="width:540px;height: 460px"></div>
+            <div class="nodataChart">无数据！</div>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    require(["biz/API/APIMgr/js/analysis"], function (list) {
+        list.init();
+    });
+</script>

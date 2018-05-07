@@ -1,0 +1,38 @@
+<div id="resourceCfgList">
+    <div class="col-lg-12 search-owe">
+        <div class="form-horizontal col-xs-5">
+            <div class="form-group">
+                <label class="control-label col-xs-3 p0">资源名称:</label>
+                <div class="col-xs-5">
+                    <input id="resourceCfgList_resName" class="k-textbox" placeholder="请输入资源名称"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-5">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="resourceCfgList_searchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--列表-->
+    <div class="col-lg-12 grid-owe">
+        <div id="resourceCfgListGrid"></div>
+        <div id="resourceCfgListGridPager"></div>
+    </div>
+
+
+</div>
+<!--Button组-->
+<div class="col-md-12 col-xs-12 p10" align="center">
+    <button type="button" opt="resPopcancel" style="display:none;" id="resPopcancel" >
+    </button>
+</div>
+<script type="text/javascript">
+    require(["biz/resourceMgr/resourceCfgMgr/js/resourceList_popup"], function (resourceList_popup) {
+        resourceList_popup.init();
+    });
+</script>

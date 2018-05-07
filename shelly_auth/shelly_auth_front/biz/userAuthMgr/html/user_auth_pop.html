@@ -1,0 +1,40 @@
+<style>
+    #userList_auth_pop p{
+        font-size: 16px;
+    }
+    #userList_auth_pop #auth_code{
+        font-size: 18px;
+        color: #37ffc3;
+    }
+    #userList_auth_pop  .auth_left{
+        float: left;
+        width: 25%;
+        text-align: center;
+        font-size: 50px;
+        color: #7693ed;
+    }
+    #userList_auth_pop .auth_right{
+        float: left;
+        width: 74%;
+    }
+</style>
+<div id="userList_auth_pop">
+    <div class="col-lg-12 search-owe">
+        <div class="auth_left">
+            <i class="fa fa-check-square-o"></i>
+        </div>
+        <div class="auth_right">
+            <p>生成授权码成功!</p>
+            <p>当前用户授权码:<font id="auth_code">854333</font></p>
+        </div>
+    </div>
+    <div class="col-lg-12 button-owe">
+        <!--Button组-->
+        <div style="text-align:center;">
+            <button type="button" opt="cancel" class="btn btn_add btn_add1 btn_add2" id="createAuth_btn">
+                <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+            </button>
+        </div>
+
+    </div>
+</div>

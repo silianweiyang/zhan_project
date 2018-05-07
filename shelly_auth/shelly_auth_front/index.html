@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="fixed k-webkit k-webkit55 left-sidebar-collapsed">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>数据安全管控平台</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/wandaui/styles/wanda.common-bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/wandaui/styles/wanda.bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/component.css"/>
+    <link rel="stylesheet" href="css/frame.css"/>
+    <link rel="stylesheet" type="text/css" href="css/service.css">
+    <link rel="stylesheet" type="text/css" href="lib/jqconfirm/jquery-confirm.min.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/ztree/css/awesomeStyle/awesome.css">
+    <link rel="stylesheet" type="text/css" href="lib/upload/css/jquery.fileupload.css">
+    <link rel="stylesheet" type="text/css" href="lib/jqgrid/css/trirand/ui.jqgrid-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="lib/ztree/css/zTreeStyle/zTreeStyle.css">
+    <script data-main="index" src="lib/require.js"></script>
+</head>
+<style>
+    a {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+<div class="wrap" id="index">
+    <div class="page-header" id="top"></div>
+
+    <div class="page-body">
+        <!--左侧导航start-->
+        <div class="left-sidebar" id="leftDiv"></div>
+        <!--左侧导航end-->
+
+        <!--右侧内容区start-->
+        <div class="content " id="mainDiv">
+            <div  id="bar" style="display: none; margin-bottom: 30px"></div>
+            <div class="row animated fadeInUp" id="main"></div>
+        </div>
+        <!--右侧内容区end-->
+        <!--<a href="#" class="scroll-to-top"><i class="fa fa-angle-double-up"></i></a>-->
+    </div>
+</div>
+<script type="text/javascript">
+    require(["lib/frame"], function (frame) {
+
+    });
+</script>
+</body>
+</html>
+

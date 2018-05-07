@@ -1,0 +1,75 @@
+<div id="appList">
+    <div class="col-lg-12 search-owe">
+
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4">应用名称:</label>
+                <div class="col-xs-8">
+                    <input id="appList_app"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4">应用描述:</label>
+                <div class="col-xs-8">
+                    <input id="appList_appDesc" placeholder="请输入应用描述" class="k-textbox"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-3 generalSrh">
+            <div class="form-group">
+                <label class="control-label col-xs-4">归属机构:</label>
+                <div class="col-xs-8">
+                    <input type="hidden" id="appList_orgId"/>
+                    <div class="input-group">
+                        <input class="form-control" id="appList_orgName" name="orgName"
+                               placeholder="请选择归属机构" onfocus=this.blur(); />
+                       <span id="appList_orgSearch" class="input-group-addon"><i
+                               class="fa fa-search search"> </i>
+                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="appList_searchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 button-owe">
+        <!--Button组-->
+        <div class="fr">
+            <button type="button" class="btn btn_add btn_add1 btn_add2" id="appList_addBtn">
+                <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>新增应用
+            </button>
+            <button type="button" class="btn btn_check btn_check1 btn_check2" id="appList_editBtn">
+                <i class="fa fa-pencil-square fa_icon2 fa_icon_white p3"></i>修改应用
+            </button>
+            <button type="button" class="btn btn_delete btn_delete1 btn_delete2" id="appList_delBtn">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>删除应用
+            </button>
+        </div>
+
+    </div>
+
+    <!--列表-->
+    <div class="col-lg-12 grid-owe">
+        <div id="appListGrid"></div>
+        <div id="appListGridPager"></div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    require(["biz/API/appMgr/js/appList"], function (appList) {
+        appList.init();
+    });
+</script>

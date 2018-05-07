@@ -1,0 +1,65 @@
+<style>
+    .tableItem_div{
+        float:left;display: block;height: 30px;margin-top: 10px;padding-left: 20px;
+    }
+    .input_style{
+        display:block;float:left;margin-right:10px;
+    }
+    .tableName_div{
+        display: block;
+        margin-top: 2px;
+        margin-left: 5px;
+        float: left;
+    }
+</style>
+<div id="myDataList">
+    <div class="col-xs-12 " style="margin-top: 10px;margin-left: 20px;font-size: 20px;">我的授权码：<strong id="authCode" style="font-size: 24px;"></strong></div>
+    <div class="col-lg-3 search-owe">
+        <div class="input-group">
+            <input class="form-control" id="resourceDirTree_name" name="resourceDirTree_name" placeholder="请输入目录名称"/>
+            <span id="resourceDirTreeList_dirSearch" class="input-group-addon" style="cursor: pointer;"><i class="fa fa-search search"></i></span>
+        </div>
+        <div class="col-xs-12 tree-owe" id="authResourceDir_tree">
+
+        </div>
+    </div>
+    <div class="col-lg-9 search-owe" style="margin-bottom: 0px;">
+        <div class="form-horizontal col-xs-4 col-lg-4">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">资源名:</label>
+                <div class="col-xs-7">
+                    <input id="resourceDirList_searchTableName" class="k-textbox" placeholder="请输入表名"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-4">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="resourceDirList_searchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+                <!--<div id="advancedSrhBtn" class="search_tex col-sm-2 p0" style="width: 30%;margin-left: 25px;">
+                    <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;高级搜索&nbsp;&nbsp;
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <button type="button"  style="display: none;" class="btn btn_add btn_add1 btn_add2" id="resourceList_detailBtn">
+        <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>查看
+    </button>
+    <button type="button"  style="display: none;" class="btn btn_add btn_add1 btn_add2" id="resourceList_applyDataBtn">
+        <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>申请数据
+    </button>
+    <!--列表-->
+    <div class="col-lg-9 grid-owe" style="margin-top: 0px;">
+        <div id="resourceTableListGrid"  style="width:98%;margin-left:1%;border:1px solid gray;height: 520px;">
+        </div>
+        <div id="resourceTableListGridPager"></div>
+    </div>
+    <!-- 新增资源目录弹窗div-->
+    <div id="resourceTable_popup"></div>
+</div>
+<script type="text/javascript">
+    require(["biz/personalCenter/myData/js/myData"], function (myData) {
+        myData.init();
+    });
+</script>

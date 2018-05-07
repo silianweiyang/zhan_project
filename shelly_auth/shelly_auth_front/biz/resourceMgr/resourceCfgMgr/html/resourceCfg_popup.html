@@ -1,0 +1,144 @@
+<div id="resourceCfgPopup">
+    <input type="hidden" id="btnOpt"/>
+    <div class="col-xs-12">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0"><em class="color_red">*</em>资源代码:</label>
+                <div class="col-xs-8">
+                    <input class="k-textbox" id="res_code" name="resCode" maxlength="20"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5" >
+            <div class="form-group">
+                <label  class="control-label col-xs-3 p0"><em class="color_red">*</em>是否开放:</label>
+                <div class="col-xs-8 radio">
+                    <label class="col-xs-4">
+                        <input type="radio" id="is_open1" name="isOpen" value="1" checked="checked">是
+                    </label>
+                    <label class="col-xs-4">
+                        <input type="radio" id="is_open0" name="isOpen" value="0">否
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-horizontal col-xs-4 col-lg-5" >
+            <div class="form-group">
+                <label  class="control-label col-xs-2 p0"><em
+                        class="color_red">*</em>资源名称:</label>
+                <div class="col-xs-8">
+                    <input class="k-textbox" id="res_name" name="resName" maxlength="50"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-3  p0"><em class="color_red">*</em>支持增量采集:</label>
+                <div class="col-xs-8 radio">
+                    <label class="col-xs-4">
+                        <input type="radio" id="is_increment1" name="isIncrement" value="1">是
+                    </label>
+                    <label class="col-xs-4">
+                        <input type="radio" id="is_increment0" name="isIncrement" value="0" checked="checked">否
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0"><em class="color_red">*</em>选择数据源:</label>
+                <div class="col-xs-8">
+                    <input id="resource_dataSource"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label  class="control-label col-xs-3 p0"><em class="color_red">*</em>资源来源:</label>
+                <div class="col-xs-8 radio">
+                    <label class="col-xs-4">
+                        <input type="radio" id="resource_source1" name="resourceSource" value="1">接入源
+                    </label>
+                    <label class="col-xs-4">
+                        <input type="radio"  id="resource_source2" name="resourceSource" value="2" checked="checked">存储源
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-horizontal col-xs-2">
+            <div class="form-group source-table-list" style="margin-left: 5px;">
+                <ul id="source_table_list">
+                </ul>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-8">
+            <div class="source-table-list">
+                <table class="source-table-field">
+                    <thead>
+                    <tr>
+                        <th width="20px"><input type="checkbox" id="checkAll"></th>
+                        <th width="100px">字段名</th>
+                        <th width="100px">字段类型</th>
+                        <th width="110px">备注说明</th>
+                        <th width="50px">是否主键</th>
+                        <th width="50px">是否开放</th>
+                        <th width="50px">是否加密</th>
+                        <th width="50px">等级</th>
+                        <th width="50px">增量字段</th>
+                    </tr>
+                    </thead>
+                    <tbody id="resource_field_list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0"><em class="color_red">*</em>选择存储源:</label>
+                <div class="col-xs-8">
+                    <input id="resource_storageSource"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-3  p0">资源表名:</label>
+                <div class="col-xs-8">
+                    <input id="restable_name" name="restableName" class="k-textbox" maxlength="50"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-horizontal col-xs-4 col-lg-10">
+            <div class="form-group">
+                <label class="control-label col-xs-1  p0">描述说明:</label>
+                <div class="col-xs-8">
+                    <textarea cols="143" rows="4" id="resource_describe" name="describe"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Button组-->
+<div class="col-md-12 col-xs-12 p10" align="center">
+    <button type="button" opt="start" id="start" class="btn btn_add btn_add1 btn_add2" style="display: none;">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>启用
+    </button>
+    <button type="button" opt="submit" id="submit" class="btn btn_delete btn_delete1 btn_delete2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>提交
+    </button>
+    <button type="button" opt="cancel" id="cancel" id="serverMgrDetail_cancel" class="btn btn_pre btn_pre1 btn_pre2">
+        <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+    </button>
+</div>
+

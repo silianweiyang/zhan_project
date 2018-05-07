@@ -1,0 +1,166 @@
+<style>
+    #APIList .checkbox{
+        position: relative;
+        /*display: inline-block;*/
+        margin: 0px;
+    }
+    #APIList .checkbox:after, .checkbox:before {
+        font-family: FontAwesome;
+        -webkit-font-feature-settings: normal;
+        -moz-font-feature-settings: normal;
+        font-feature-settings: normal;
+        -webkit-font-kerning: auto;
+        -moz-font-kerning: auto;
+        font-kerning: auto;
+        -webkit-font-language-override: normal;
+        -moz-font-language-override: normal;
+        font-language-override: normal;
+        font-stretch: normal;
+        font-style: normal;
+        font-synthesis: weight style;
+        font-variant: normal;
+        font-weight: normal;
+        text-rendering: auto;
+    }
+    #APIList .checkbox label {
+        width: 17px;
+        height: 17px;
+        background: #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 20px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+    #APIList .checkbox label:after {
+        content: '';
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        border-radius: 100%;
+        left: 0;
+        top: -5px;
+        z-index: 2;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+    #APIList .checkbox input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+    #APIList .checkbox input:hover + label:after {
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    }
+    #APIList .checkbox-checked + label:after {
+        left: 40px;
+    }
+
+    #APIList .checkbox label {
+        width: 32px;
+    }
+    #APIList .checkbox label:after {
+        top: 0;
+        width: 17px;
+        height: 17px;
+    }
+    #APIList .checkbox-checked + label {
+        background: #4BD865;
+    }
+    #APIList .checkbox-checked + label:after {
+        left: 15px;
+    }
+    #APIList .checkbox label{
+        min-height: 17px;
+    }
+</style>
+<div id="APIList">
+    <div class="col-lg-12 search-owe">
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">API名称:</label>
+                <div class="col-xs-8">
+                    <input id="APIList_name" placeholder="请输入API名称" class="k-textbox"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">应用名称:</label>
+                <div class="col-xs-8">
+                    <input id="APIList_serverName"/>
+                </div>
+            </div>
+        </div>
+        <!--负载、最大并发数、超时时间，参数转换、流量控制（就是最大并发数）在发布页面， 授权页面选择是否权限认证、是否安全认证 都是单选-->
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4 p0">API状态:</label>
+                <div class="col-xs-8">
+                    <input id="APIList_state"/>
+                </div>
+            </div>
+        </div>
+        <!--<div class="form-horizontal col-xs-4 col-lg-3 generalSrh" style="display: none">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4 p0">归属单位:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input type="hidden" id="APIList_orgId"/>
+                    <div class="input-group">
+                        <input class="form-control" id="APIList_orgName" name="orgName"
+                               placeholder="请选择应用归属" onfocus=this.blur(); />
+                        <span id="APIList_orgSearch" class="input-group-addon"><i class="fa fa-search search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div class="form-horizontal col-sm-4 col-md-4 col-lg-3">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="APIList_SearchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+                <!--<div id="advancedSrhBtn" class="search_tex col-sm-2 p0" style="width: 30%;margin-left: 25px;">
+                    <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;高级搜索&nbsp;&nbsp;
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+
+    <!--Button组-->
+    <div class="col-lg-12 button-owe">
+        <div class="fr">
+            <button type="button" contrEleTag="MGR_SHOW" id="APIList_plusBtn"
+                    class="btn btn_add btn_add1 btn_add2">
+                <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>发布API
+            </button>
+            <button type="button" id="APIList_delBtn" class="btn btn_delete btn_delete1 btn_delete2">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>删除API
+            </button>
+            <button type="button" id="APIList_testBtn" class="btn btn_check btn_check1 btn_check2" style="display: none">
+                <i class="fa fa-pencil-square fa_icon2 fa_icon_white p3"></i>修改API
+            </button>
+        </div>
+    </div>
+
+    <!--列表-->
+    <div class="col-lg-12 grid-owe">
+        <div id="APIListGrid"></div>
+        <div id="APIListGridPager"></div>
+    </div>
+
+    <div id="APIList_testPopup"></div>
+</div>
+<script type="text/javascript">
+    require(["biz/API/APIMgr/js/list"], function (list) {
+        list.init();
+    });
+</script>

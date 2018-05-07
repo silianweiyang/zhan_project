@@ -1,0 +1,75 @@
+<div id="serverMgrDetail">
+    <input type="hidden" id="serverMgrDetail_serverCode"/>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0">应用归属:</label>
+                <div class="col-xs-8">
+                    <input type="hidden" id="serverMgrDetail_orgId"/>
+                    <input class="k-textbox" id="serverMgrDetail_orgName" name="orgName" readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0">应用名称:</label>
+                <div class="col-xs-8">
+                    <input  class="k-textbox" id="serverMgrDetail_serverName" maxlength="20"  readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0">身份编码:</label>
+                <div class="col-xs-8">
+                    <input  class="k-textbox" id="serverMgrDetail_identifyCode" readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0">密钥:</label>
+                <div class="col-xs-8">
+                    <input  class="k-textbox" id="serverMgrDetail_userPassword" name="orgName"  readonly="readonly"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0">应用描述:</label>
+                <div class="col-xs-8">
+                   <textarea class="k-textbox" id="serverMgrDetail_serverDesc"  readonly="readonly"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0">文档上传:</label>
+                <div class="col-xs-8">
+                    <input id="serverMgrDetail_files" class="k-textbox" readonly="readonly" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Button组-->
+<div class="col-md-12 col-xs-12 p10" align="center">
+    <button type="button"  id="serverMgrDetail_download" class="btn btn_delete btn_delete1 btn_delete2">
+        <i class="fa fa-cloud-download fa_icon1 fa_icon_white fa_icon_pink p3"></i>文档下载
+    </button>
+    <button type="button" opt="cancel" id="serverMgrDetail_cancel" class="btn btn_pre btn_pre1 btn_pre2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+    </button>
+</div>
+
+<script type="text/javascript">
+    require(["biz/API/serverMgr/js/serverDetail_popup"], function (serverDetail_popup) {
+        serverDetail_popup.init();
+    });
+</script>

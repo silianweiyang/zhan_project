@@ -1,0 +1,41 @@
+<style>
+    #APIOutParamSetting_popup .k-tabstrip>.k-content{
+        padding:0px;
+    }
+    #APIOutParamSetting_popup .table>tbody>tr.success>td{
+        background-color: inherit;
+        color:#000;
+    }
+</style>
+<div id="APIOutParamSetting_popup" class="col-xs-12 p0" style="max-width: 900px;">
+        <div class="col-lg-11 col-xs-11"><h3 class="title_service fl" style="margin-top: 0px;">参数转换</h3>
+            <span class="left_line"></span>
+        </div>
+        <div class="col-lg-11 col-xs-11" style="padding-left: 30px;">
+            <div id="APIOutParamSetting_popup_outParamGrid" style="width: 820px;"></div>
+            <button id="APIOutParamSetting_popup_outParamGrid_dataAdd" class="add_btn fl">
+                <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+            </button>
+        </div>
+        <div class="col-lg-11 col-xs-11" style="margin-top: 20px"><h3 class="title_service fl" style="margin-top: 0px;">字段过滤</h3>
+            <span class="left_line"></span>
+        </div>
+        <div class="col-lg-11 col-xs-11" style="padding-left: 30px;">
+            <table id="APIMgr_outParamFilterGrid" class="table" style="margin-bottom: 0px;">
+                <tbody></tbody>
+            </table>
+            <button id="APIMgr_outParamFilterGrid_dataAdd" class="add_btn fl">
+                <i class="fa fa-plus-circle  fa_icon_white p3 "></i>新增
+            </button>
+        </div>
+
+        <div class="col-md-11 col-xs-11 p10" align="center" id="saveButton">
+            <button id="APIOutParamSetting_popup_cancelBtn" opt="cancel" type="button"  class="btn btn_cancel btn_cancel1 btn_cancel2">
+                <i class="fa fa-arrow-circle-o-up fa_icon1 fa_icon_white fa_icon_pink p3"></i>取消
+            </button>
+            &nbsp;&nbsp;&nbsp;
+            <button id="APIOutParamSetting_popup_saveBtn" type="button" opt="submit" class="btn btn_pre btn_pre1 btn_pre2">
+                <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>确定
+            </button>
+        </div>
+</div>

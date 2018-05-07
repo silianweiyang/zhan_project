@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>数据安全管控平台</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/frame.css"/>
+    <script data-main="login" src="lib/require.js"></script>
+
+</head>
+<style>
+    a {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+<span id="notification"></span>
+
+<div class="wrap" id="login">
+    <div class="bg">
+        <div class="login">
+            <div class="logo_t">
+                <div align="center"><img src="images/logo1.png"></div>
+            </div>
+            <form action="#" method="post" class="container1  loginform">
+                <div class="login_con">
+                    <div class="control-group">
+                        <lable for="账号" class="control-label fa fa-user-o"></lable>
+                        <input class="control-label-input col-xs-10" id="accountCode" name="userNmae" value="admin"
+                               placeholder="请输入账号"/>
+                    </div>
+                    <div class="control-group">
+                        <lable for="密码" class="control-label1 fa fa-unlock-alt"></lable>
+                        <input class="control-label-input col-xs-10" id="passward" name="passward" value="123456"
+                               type="password" placeholder="请输入密码"/>
+                    </div>
+                    <!--<div class="control-group">
+                        <lable for="机构" class="control-label2 fa fa-sitemap"></lable>
+                        <select class="control-label-input col-xs-10" id="fromOrg">
+                        </select>
+                    </div>-->
+                    <div id="errorinfo" style="color: red"></div>
+                    <div class="control-group">
+                        <button type="button" class="login_btn col-xs-12" id="signInBtn">登录</button>
+                    </div>
+                    <a href="" class="downloade_chrome" id="downTool"><i
+                            class="fa fa-download"></i>&nbsp;&nbsp;下载浏览器</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

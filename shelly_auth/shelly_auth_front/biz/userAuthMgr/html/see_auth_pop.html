@@ -1,0 +1,81 @@
+<style>
+#see_auth_pop .auth_left{
+    width: 45%;
+    float: left;
+}
+#see_auth_pop .auth_right{
+    width: 54%;
+    height: 500px;
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: auto;
+}
+#see_auth_pop .auth_width{
+    width: 180px;
+}
+#see_auth_pop .authSty{
+    font-size: 24px;
+    margin: 0 auto;
+}
+</style>
+<div id="see_auth_pop">
+    <div class="col-lg-12 search-owe">
+
+        <div class="auth_left">
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">授权码:</label>
+                    <div class="col-sm-8 auth_width">
+                        <span class="authSty" id="seeAuth_auth"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">数据包名:</label>
+                    <div class="col-sm-8 auth_width">
+                        <span id="seeAuth_dataname" style="display: inline-block;padding-top: 7px;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">授权开始时间:</label>
+                    <div class="col-sm-8 auth_width">
+                        <span id="seeAuth_startTime" style="display: inline-block;padding-top: 7px;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">授权结束时间:</label>
+                    <div class="col-sm-8 auth_width">
+                        <span id="seeAuth_endTime" style="display: inline-block;padding-top: 7px;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">获取方式:</label>
+                    <div class="col-sm-8 auth_width">
+                        <span id="takeStyle" style="display: inline-block;padding-top: 7px;"></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="auth_right">
+            <div class="resTree" id="resTree1"></div>
+        </div>
+    </div>
+    <div class="col-lg-12 button-owe">
+        <!--Button组-->
+        <div style="text-align:center;margin-top: 10px;">
+            <button type="button" opt="cancel" class="btn btn_add btn_add1 btn_add2" id="see_auth_cancel_btn">
+                <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+            </button>
+        </div>
+
+    </div>
+</div>

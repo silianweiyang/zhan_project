@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>采集配置</title>
+    <meta charset="UTF-8">
+</head>
+<style>
+    #logstashjsonConfig .online {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        animation: greenbreatheLight 1s linear infinite alternate;
+        -moz-animation: greenbreatheLight 1s linear infinite alternate;
+        /* Firefox */
+        -webkit-animation: greenbreatheLight 1s linear infinite alternate;
+        /* Safari and Chrome */
+        -o-animation: greenbreatheLight 1s linear infinite alternate;
+        /* Opera */
+    }
+
+    #logstashjsonConfig .offline {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #ccc;
+    }
+
+    #logstashjsonConfig .delete {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        animation: redbreatheLight 1s linear infinite alternate;
+        -moz-animation: redbreatheLight 1s linear infinite alternate;
+        /* Firefox */
+        -webkit-animation: redbreatheLight 1s linear infinite alternate;
+        /* Safari and Chrome */
+        -o-animation: redbreatheLight 1s linear infinite alternate;
+        /* Opera */
+    }
+
+    #logstashjsonConfig .abnormal {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        animation: bluebreatheLight 1s linear infinite alternate;
+        -moz-animation: bluebreatheLight 1s linear infinite alternate;
+        /* Firefox */
+        -webkit-animation: bluebreatheLight 1s linear infinite alternate;
+        /* Safari and Chrome */
+        -o-animation: bluebreatheLight 1s linear infinite alternate;
+        /* Opera */
+    }
+
+    /*gereen*/
+    @keyframes greenbreatheLight {
+        from {
+            background: Green;
+        }
+        to {
+            background: lightGreen;
+        }
+    }
+
+    @-moz-keyframes greenbreatheLight
+        /* Firefox */
+
+    {
+        from {
+            background: Green;
+        }
+        to {
+            background: lightGreen;
+        }
+    }
+
+    @-webkit-keyframes greenbreatheLight
+        /* Safari and Chrome */
+
+    {
+        from {
+            background: Green;
+        }
+        to {
+            background: lightGreen;
+        }
+    }
+
+    @-o-keyframes greenbreatheLight
+        /* Opera */
+
+    {
+        from {
+            background: Green;
+        }
+        to {
+            background: lightGreen;
+        }
+    }
+
+    /*gereen*/
+    /*red*/
+    @keyframes redbreatheLight {
+        from {
+            background: #ffac81;
+        }
+        to {
+            background: red;
+        }
+    }
+
+    @-moz-keyframes redbreatheLight
+        /* Firefox */
+
+    {
+        from {
+            background: #ffac81;
+        }
+        to {
+            background: red;
+        }
+    }
+
+    @-webkit-keyframes redbreatheLight
+        /* Safari and Chrome */
+
+    {
+        from {
+            background: #ffac81;
+        }
+        to {
+            background: red;
+        }
+    }
+
+    @-o-keyframes redbreatheLight
+        /* Opera */
+
+    {
+        from {
+            background: #ffac81;;
+        }
+        to {
+            background: red;
+        }
+    }
+
+    /*red*/
+    /*blue*/
+    @keyframes bluebreatheLight {
+        from {
+            background: skyblue;
+        }
+        to {
+            background: blue;
+        }
+    }
+
+    @-moz-keyframes bluebreatheLight
+        /* Firefox */
+
+    {
+        from {
+            background: skyblue;
+        }
+        to {
+            background: blue;
+        }
+    }
+
+    @-webkit-keyframes bluebreatheLight
+        /* Safari and Chrome */
+
+    {
+        from {
+            background: skyblue;
+        }
+        to {
+            background: blue;
+        }
+    }
+
+    @-o-keyframes bluebreatheLight
+        /* Opera */
+
+    {
+        from {
+            background: skyblue;
+        }
+        to {
+            background: blue;
+        }
+    }
+
+    /*blue*/
+</style>
+<body>
+<div id="logstashjsonConfig">
+
+    <div class="col-lg-12 search-owe">
+
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group">
+                <label class="control-label col-xs-4">采集代理:</label>
+                <div class="col-xs-8">
+                    <input id="logWorkerName"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 editNoShow">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">采集任务:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="name" class="k-textbox" placeholder="请输入采集任务"/>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-horizontal col-sm-4  col-md-4 col-lg-3 editNoShow">
+            <div class="form-group">
+                <label class="control-label col-sm-4 col-md-4">部署状态:</label>
+                <div class="col-sm-8 col-md-8">
+                    <input id="deployState"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-xs-4 col-lg-3">
+            <div class="form-group" style="padding-left:25px;">
+                <button type="button" id="searchBtn" class="search_btn search_btn1 col-lg-3 col-md-3 p0">
+                    <i class="fa fa-search search fa_icon1 fa_icon_white fa_icon_blue p3"></i>查询
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-12 button-owe">
+        <div class="fr">
+            <button type="button" class="btn btn_add btn_add1 btn_add2" id="addBtn">
+                <i class="fa fa-plus-circle fa_icon1 fa_icon_white p3"></i>新增采集任务
+            </button>
+            <button type="button" class="btn btn_delete btn_delete1 btn_delete2" id="deltBtn">
+                <i class="fa fa-times-circle-o  fa_icon3 fa_icon_white p3"></i>删除采集任务
+            </button>
+        </div>
+    </div>
+
+    <!--列表-->
+    <div class="col-lg-12 grid-owe">
+        <div id="logstashjsonConfigGrid"></div>
+        <div id="logstashjsonConfigGridPager"></div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    require(["biz/logSystem/logstashjsonConfig"], function (logstashjsonConfig) {
+        logstashjsonConfig.init();
+    });
+</script>
+</body>
+
+</html>

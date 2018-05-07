@@ -1,0 +1,28 @@
+<div id="serverList_popup" class="col-lg-11">
+    <input type="hidden" id="serverList_popup_nodeCode"/>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-3"><em
+                        class="color_red">*</em>服务名称:</label>
+                <div class="col-sm-8 col-md-6">
+                    <input  type="text" class="k-textbox" id="serverList_popup_nodeName" maxlength="25" placeholder="请输入服务名称" validate="{required:true,maxlength:25}" data-message="服务名称"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">服务描述</label>
+                <div class="col-sm-8 col-md-6">
+                    <textarea id="serverList_popup_nodeDesc" class="form-control"/>
+                </div>
+            </div>
+        </div>
+
+    <!--Button组-->
+    <div class="col-lg-11" style="text-align: center;margin-top:10px;padding-left:30px;">
+        <button type="button" opt="submit" id="serverList_popup_save" class="btn btn_pre btn_pre1 btn_pre2">
+            <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>保存并关闭
+        </button>
+        <button type="button" opt="cancel" id="serverList_popup_cancel" class="btn btn_cancel btn_cancel1 btn_cancel2">
+            <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_blue p3"></i>取消
+        </button>
+    </div>
+</div>

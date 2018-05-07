@@ -1,0 +1,136 @@
+<div id="dataSourceInfo">
+    <input type="hidden" id="dataSource_dataSourceId"/>
+    <input type="hidden" id="dataSource_type"/>
+    <input type="hidden" id="divModel"/>
+    <input type="hidden" id="dataSource_createCode"/>
+    <input type="hidden" id="dataSource_createTime"/>
+    <input type="hidden" id="dataSource_status"/>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2 p0" style="width: 80px;"><em
+                        class="color_red">*</em>数据源名称:</label>
+                <div class="col-xs-8">
+                    <input class="k-textbox" id="dataSource_dataSourceName" name="dataSourceName" maxlength="20"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5" >
+            <div class="form-group">
+                <label  class="control-label col-xs-2 p0" style="width: 80px;"><em
+                        class="color_red">*</em>数据源类型:</label>
+                <div class="col-xs-8">
+                    <input id="dataSource_dataSourceType"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5" >
+            <div class="form-group">
+                <label  class="control-label col-xs-2 p0" style="width: 80px;"><em
+                        class="color_red">*</em>数据库类型:</label>
+                <div class="col-xs-8">
+                    <input id="dataSource_dataBaseType"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label  class="control-label col-xs-2 p0" style="width: 80px;"><em
+                        class="color_red">*</em>数据库版本:</label>
+                <div class="col-xs-8">
+                    <input id="dataSource_dataBaseVersion"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;"><em
+                        class="color_red">*</em>IP:</label>
+                <div class="col-xs-8">
+                    <input class="k-textbox" id="dataSource_ip" name="ip" maxlength="30"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;"><em
+                        class="color_red">*</em>端口号:</label>
+                <div class="col-xs-8">
+                    <input id="dataSource_port" name="port" class="k-textbox" maxlength="10"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;"><em
+                        class="color_red">*</em>实例名:</label>
+                <div class="col-xs-8">
+                    <input class="k-textbox" id="dataSource_instanceName" name="instanceNmae" maxlength="10"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;"><em
+                        class="color_red">*</em>数据库账户:</label>
+                <div class="col-xs-8">
+                    <input id="dataSource_account" name="account" class="k-textbox" maxlength="20"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;"><em
+                        class="color_red">*</em>密码:</label>
+                <div class="col-xs-8">
+                    <input class="k-textbox" id="dataSource_password" name="password" maxlength="20"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal col-xs-4 col-lg-5" >
+            <div class="form-group">
+                <label  class="control-label col-xs-2 p0" style="width: 80px;"><em
+                        class="color_red">*</em>字符集编码:</label>
+                <div class="col-xs-8">
+                    <input id="dataSource_characterSet"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11">
+        <div class="form-horizontal col-xs-4 col-lg-5">
+            <div class="form-group">
+                <label class="control-label col-xs-2  p0" style="width: 80px;">描述说明:</label>
+                <div class="col-xs-8">
+                    <textarea cols="50" rows="4" id="dataSource_describe" name="describe"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Button组-->
+<div class="col-md-12 col-xs-12 p10" align="center">
+    <button type="button" opt="test" id="test" class="btn btn_delete btn_delete1 btn_delete2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>测试
+    </button>
+    <button type="button" opt="enable" id="enable" class="btn btn_delete btn_delete1 btn_delete2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>启用
+    </button>
+    <button type="button" opt="submit" id="submit" class="btn btn_delete btn_delete1 btn_delete2">
+        <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>保存
+    </button>
+    <button type="button" opt="cancel" id="cancel" id="serverMgrDetail_cancel" class="btn btn_pre btn_pre1 btn_pre2">
+        <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+    </button>
+</div>
+

@@ -1,0 +1,86 @@
+<style>
+#update_auth_pop .auth_left{
+    width: 45%;
+    float: left;
+}
+#update_auth_pop .auth_right{
+    width: 54%;
+    height: 500px;
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: auto;
+}
+#update_auth_pop .auth_width{
+    width: 180px;
+}
+#update_auth_pop .authSty{
+    font-size: 24px;
+    margin: 0 auto;
+}
+</style>
+<div id="update_auth_pop">
+    <div class="col-lg-12 search-owe">
+
+        <div class="auth_left">
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">授权码:</label>
+                    <div class="col-sm-8 auth_width">
+                        <span class="authSty" id="update_user_auth"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">数据包名:</label>
+                    <div class="col-sm-8 auth_width">
+                        <input id="update_auth_dataName" style="width: 150px;" class="k-textbox" placeholder="请输入数据包名"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">授权开始时间:</label>
+                    <div class="col-sm-8 auth_width" id="update_auth_beginTime_div">
+                        <input id="update_auth_beginTime" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">授权结束时间:</label>
+                    <div class="col-sm-8 auth_width" id="update_auth_endTime_div">
+                        <input id="update_auth_endTime" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-4 p0">获取方式:</label>
+                    <div class="col-sm-8 auth_width">
+                        <input type="checkbox" id="update_takeStyle_ws" value="1" name="update_takeStyle"/><label for="update_takeStyle_ws">webService</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" id="update_takeStyle_web" value="2" name="update_takeStyle"/><label for="update_takeStyle_web">页面下载</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="auth_right">
+            <div class="resTree" id="update_resTree"></div>
+        </div>
+    </div>
+    <div class="col-lg-12 button-owe">
+        <!--Button组-->
+        <div style="text-align:center;margin-top: 10px;">
+            <button type="button" opt="submit" class="btn btn_delete btn_delete1 btn_delete2" id="update_auth_submit_btn">
+                <i class="fa fa-check-square-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>确定
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" opt="cancel" class="btn btn_add btn_add1 btn_add2" id="update_auth_cancel_btn">
+                <i class="fa fa-times-circle-o fa_icon1 fa_icon_white fa_icon_pink p3"></i>关闭
+            </button>
+        </div>
+
+    </div>
+</div>

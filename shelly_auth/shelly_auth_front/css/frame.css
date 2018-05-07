@@ -1,0 +1,622 @@
+@charset "utf-8";
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
+    font-family: "microsoft yahei",Verdana, Arial}
+/* 分页按钮内图标垂直居中*/
+body{ font-size:12px;}
+.btn{ font-size:12px;
+    border-radius:2px;}
+.cb{ clear: both;}
+.mt5{ margin-top: 5px;}
+.mt10{ margin-top: 10px;}
+.mt20{ margin-top: 20px;}
+a:hover{ text-decoration:none;}
+.p0{ padding:0px;}
+.p3{ padding:0px 3px;}
+.p10{ padding:10px 0;}
+.fl{  float:left;}
+.fr{ float:right;}
+.fa_icon{ font-size:2rem;}
+ul,li{  list-style: none;}
+.color_red{ font-style: normal; color: #ff0000;vertical-align: middle}
+
+.page-header{ background:#004e90; margin:0px; border:none;}
+.row{ margin:0px;}
+.fa-power-off:before{ color:#fff;}
+.search_btn{ display:inline-block; text-align:center; border:1px solid #085da5; color:#085da5; border-radius:3px; line-height:30px;  padding-left:3px;}
+.search_btn1{
+    display:inline-block;
+    text-align:center;
+    background: #1b5a7a;
+     border: 1px solid;
+    color:#fff;
+    border-radius:2px;
+    line-height:15px;
+    padding:6px;}
+.search_tex{ display:inline-block; line-height:30px;; cursor:pointer}
+
+.k-textbox{ border:1px solid #ccc; border-radius:2px; background:#fff; line-height:30px; padding:0px 12px;}
+#tabstrip .k-tabstrip-items.k-link
+{
+    height: 10px;
+}
+#tabstrip.k-content{
+    background-color: #84B3ED;
+    font-size: small;
+}
+
+
+#tabstrip.k-tabstrip-items .k-header  {
+    background-color: #84B3ED;
+    height: 10px;
+}
+#tabstrip div{
+    margin:0px;
+}
+  .k-tabstrip>.k-content{
+    border-width: 0px;
+}
+
+#notificationDiv .k-widget{
+    border-color: #ffe0d9;
+}
+#notificationDiv  {
+    background: #ffe0d9;
+    color: black;
+    width: 300px;
+}
+#notificationDiv  h3 {
+    font-size: 1em;
+    padding: 10px 10px 5px;
+    font-weight:bold;
+}
+#notificationDiv   img {
+    float: left;
+    margin: 5px 15px 5px 15px;
+}
+.k-tabstrip>.k-content{
+    overflow:hidden
+}
+.overflow-hidden{overflow:hidden}
+.hideRight{
+   display: none;
+ }
+.hideEle{
+    display: none;
+}
+/*************修改导航栏样式************/
+.k-menu .k-state-hover>.k-link,.k-menu .k-state-default .k-state-border-down,.k-menu .k-state-hover .k-link.k-state-active{
+    background-color: #22AFF3;
+    color:#fff;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0) inset;
+}
+.k-group .k-state-hover>.k-link,.k-group .k-state-hover .k-link.k-state-active,.k-group .k-item > .k-state-border-right, .k-group .k-item > .k-state-border-left,.k-group .k-state-hover:hover{
+    background-color: #f7f7f7;
+    color:#000;
+}
+.wd-nav-menu.k-widget,.k-menu.k-item, .k-widget.k-menu-horizontal>.k-item{
+    border:0px;
+}
+.k-menu .k-item>.k-link{
+    padding:13px 10px;
+}
+/*************修改导航栏样式 end************/
+
+/***********修改grid样式 start***********/
+.k-grid-header:first-child th.k-header:first-child, thead.k-grid-header th.k-header:first-child, .k-rtl thead.k-grid-header th.k-header:last-child{
+    border-radius:0px;
+}
+.k-grid-header th.k-header:first-child, .k-grid tbody td:first-child, .k-grid tfoot td:first-child, .k-filter-row>th:first-child{
+    border-left-width:1px;
+}
+.k-block,.k-grid-header, .k-toolbar, .k-grouping-header, .k-pager-wrap, .k-draghandle, .k-treemap-tile/*, html .km-pane-wrapper .k-header*/{
+    background-color: #f7f7f7;
+}
+.k-header, .k-grid-header-wrap, .k-grid .k-grouping-header, .k-grid-header, .k-pager-wrap, .k-pager-wrap .k-textbox, .k-pager-wrap .k-link, .k-grouping-header .k-group-indicator, .k-gantt-toolbar .k-state-default{
+    border-color: #eaeaea;
+}
+.k-grid tr td{
+    border-color: #eaeaea;
+    border-width:0px 0 1px 1px
+}
+.k-grid-header th.k-header, .k-filter-row th{
+    border-width:1px 0px 0px 1px;
+}
+.k-grid-norecords-template{
+    border:0px;
+}
+.k-grid,.k-autocomplete, .k-block, .k-button, .k-calendar .k-link, .k-calendar td, .k-calendar-container, .k-colorpicker, .k-combobox, .k-datepicker, .k-datetimepicker, .k-drag-clue, .k-dropdown, .k-dropdown-wrap, .k-editor-inline, .k-grid .k-filter-options, .k-grouping-header .k-group-indicator, .k-inline-block, .k-list-container, .k-multiselect, .k-notification, .k-numeric-wrap, .k-numerictextbox, .k-picker-wrap, .k-slider-selection, .k-slider-track, .k-split-button, .k-textbox, .k-tile, .k-timepicker, .k-tooltip, .k-touch-scrollbar, .k-treeview .k-in, .k-upload, .k-window, .k-window-action, .k-window-titleless .k-window-content{
+    border-radius:2px;
+}
+.k-grid tbody .k-button, .k-ie8 .k-grid tbody button.k-button{
+    min-width:0px;
+}
+.k-button.k-state-active:hover, .k-button:active:hover{
+    border:none;
+    background-color: inherit;
+}
+.k-grid .k-button{
+    margin: 0px;
+    border-radius:0px;
+}
+.k-grid .k-state-selected{
+    background-color:#a7c6de;
+    border-color:#a7c6de;
+}
+.k-grid tr.k-state-selected:hover td{
+    background-color:#a7c6de;
+}
+.k-button-info{
+    color:#06C;
+    border:none;
+    background-color: inherit;
+    padding: 0px;
+}
+.k-button-info:hover,.k-button-info:active,.k-button-info:active:hover{
+    color: #06C;
+    background-color:inherit;
+    border-color: inherit;
+}
+.k-i-arrow-60-down{
+    background-position:0 -32px;
+}
+.k-i-close{
+    background-position:-34px -17px;
+}
+.k-button{
+    background-color: inherit;
+}
+.k-autocomplete .k-input, .k-dropdown-wrap .k-input, .k-numeric-wrap .k-input, .k-picker-wrap .k-input, .k-selectbox .k-input, .k-textbox>input{
+    height: 1.9em;
+    line-height: 1.9em;
+}
+.k-ff input.k-textbox{
+    height: 2.40em;
+}
+/***********修改grid样式 end***********/
+/***********修改tabstrip样式 start*****/
+.k-tabstrip-left>.k-tabstrip-items .k-state-active{
+    border-width: 1px 0px 1px 5px;
+    border-left-color: #d28a71;
+}
+.k-tabstrip-items .k-state-default{
+    border-color:#ccc;
+}
+.k-window-titlebar .k-window-action{
+     padding: 0px 1px;
+}
+.k-icon{
+     width: 15px;
+     height: 15px;
+}
+.k-state-hover>.k-i-close{
+    background-position:-34px -17px;
+}
+.k-button:not(.k-state-disabled):hover .k-i-close{
+    background-position:-34px -17px;
+}
+    /***********修改tabstrip样式 end**********************/
+/***********修改标题样式 ********/
+.wd-k-primary{
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.wd-k-primary:hover, .wd-k-primary:focus, .wd-k-primary:active, .wd-k-primary.active {
+    color: #fff;
+    background-color: #3071a9;
+    border-color: #285e8e;
+}
+.wd-k-info{
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+.wd-k-info:hover, .wd-k-info:focus, .wd-k-info:active, .wd-k-info.active {
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+.wd-k-warning{
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+.wd-k-warning:hover, .wd-k-warning:focus, .wd-k-warning:active {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+.wd-k-success{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    }
+.wd-k-success:hover,.wd-k-success:focus,.wd-k-success:active,.wd-k-success.active{
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439
+}
+
+.wd-k-success:active,.wd-k-success.active,.open>.dropdown-toggle.wd-k-success {
+    background-image: none
+}
+
+.wd-k-success.disabled,.wd-k-success[disabled],fieldset[disabled] .wd-k-success,.wd-k-success.disabled:hover,.wd-k-success[disabled]:hover,fieldset[disabled] .wd-k-success:hover,.wd-k-success.disabled:focus,.wd-k-success[disabled]:focus,fieldset[disabled] .wd-k-success:focus,.wd-k-success.disabled:active,.wd-k-success[disabled]:active,fieldset[disabled] .wd-k-success:active,.wd-k-success.disabled.active,.wd-k-success[disabled].active,fieldset[disabled] .wd-k-success.active {
+    background-color: #5cb85c;
+    border-color: #4cae4c
+}
+.wd-k-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a
+}
+
+.wd-k-danger:hover,.wd-k-danger:focus,.wd-k-danger:active{
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925
+}
+
+.wd-k-danger:active,.wd-k-danger.active {
+    background-image: none
+}
+
+.wd-k-danger.disabled,.wd-k-danger[disabled],fieldset[disabled] .wd-k-danger,.wd-k-danger.disabled:hover,.wd-k-danger[disabled]:hover,fieldset[disabled] .wd-k-danger:hover,.wd-k-danger.disabled:focus,.wd-k-danger[disabled]:focus,fieldset[disabled] .wd-k-danger:focus,.wd-k-danger.disabled:active,.wd-k-danger[disabled]:active,fieldset[disabled] .wd-k-danger:active,.wd-k-danger.disabled.active,.wd-k-danger[disabled].active,fieldset[disabled] .wd-k-danger.active {
+    background-color: #d9534f;
+    border-color: #d43f3a
+}
+.wd-k-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236
+}
+
+.wd-k-warning:hover,.wd-k-warning:focus,.wd-k-warning:active {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512
+}
+
+.wd-k-warning:active,.wd-k-warning.active {
+    background-image: none
+}
+
+.wd-k-warning.disabled,.wd-k-warning[disabled],fieldset[disabled] .wd-k-warning,.wd-k-warning.disabled:hover,.wd-k-warning[disabled]:hover,fieldset[disabled] .wd-k-warning:hover,.wd-k-warning.disabled:focus,.wd-k-warning[disabled]:focus,fieldset[disabled] .wd-k-warning:focus,.wd-k-warning.disabled:active,.wd-k-warning[disabled]:active,fieldset[disabled] .wd-k-warning:active,.wd-k-warning.disabled.active,.wd-k-warning[disabled].active,fieldset[disabled] .wd-k-warning.active {
+    background-color: #f0ad4e;
+    border-color: #eea236
+}
+.w-border{
+    border-radius:0px;
+}
+/*************修改标题样式 end*******************/
+/***********修改tab样式***************/
+.k-autocomplete.k-state-border-down, .k-block>.k-header, .k-calendar-container.k-state-border-down,
+.k-dropdown-wrap.k-state-border-down, .k-list-container.k-state-border-down, .k-multiselect.k-state-border-down,
+.k-numeric-wrap.k-state-border-down, .k-panelbar .k-tabstrip-items .k-item, .k-picker-wrap.k-state-border-down,
+.k-tabstrip-items .k-item, .k-tabstrip-items .k-link, .k-window-titlebar{
+    /*border-radius: 4px 4px 0 0;*/
+    border-radius: 0;
+    background-color: #f5f5f5;
+}
+.k-panelbar>li.k-state-default>.k-link, .k-tabstrip-items .k-state-default .k-link {
+    color: #333;
+}
+.k-panelbar>li.k-state-default>.k-link.k-state-hover,.k-panelbar>li.k-state-hover>.k-link,.k-tabstrip-items .k-state-hover .k-link{
+    color: #333;
+    background-color:#ebebeb;
+}
+.k-tabstrip-items .k-state-active .k-link {
+    color: white;
+    background-color: #0a6bbc;
+}
+
+.k-tabstrip:focus {
+    -webkit-box-shadow: 0 0;
+    box-shadow: 0 0;
+}
+
+.k-tabstrip .k-content.k-state-active {
+    background-color: #fff;
+     color: #333;
+    border: 1px solid  #ccc;
+}
+.k-state-hover,.k-state-hover:hover{
+    background-color: inherit;
+}
+
+/***********修改tab样式 end**************/
+
+/***********修改tree样式**************/
+.k-widget.k-treeview {
+    color:  #333;;
+}
+.k-button.k-state-focused, .k-button:focus:active:not(.k-state-disabled):not([disabled]),.k-button:focus:not(.k-state-disabled):not([disabled]),.k-state-focused{
+    box-shadow: 0 0;
+}
+/*************修改标题样式 end*******************/
+
+label{
+    font-weight:normal;
+    margin-bottom: 0px;
+}
+
+.buttons-wrap{
+    text-align:right;
+}
+.wd-breadcrumb {
+    height: 25px;
+    line-height: 25px;
+    color: #666;
+}
+/********************************/
+th {
+    background-color: #f5f5f5;
+    border-color: #eaeaea;
+    font-weight: normal;
+}
+td {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding:7px;
+    vertical-align: middle;
+}
+.table>tbody>tr.success>td, .table>tbody>tr.success>th, .table>tbody>tr>td.success, .table>tbody>tr>th.success, .table>tfoot>tr.success>td, .table>tfoot>tr.success>th, .table>tfoot>tr>td.success, .table>tfoot>tr>th.success, .table>thead>tr.success>td, .table>thead>tr.success>th, .table>thead>tr>td.success, .table>thead>tr>th.success{
+    background-color: #A7C6DE;
+}
+/********************************/
+
+.search-owe{
+    padding:15px 0px 0px 0px;
+    margin-bottom:10px;
+    margin-bottom: 0;
+}
+.tree-owe{
+    padding:15px 0px 0px 0px;
+    margin-bottom: 0;
+    border-right: 1px solid #cccccc;
+    height: 535px;
+    overflow-y: auto;
+}
+.grid-owe{
+     padding:0px;
+     margin-top:10px;
+     overflow: auto;
+ }
+.button-owe{
+    padding:0px;
+    overflow: auto;
+}
+.k-widget .k-autocomplete{
+
+}
+fieldset{
+    padding:.35em .625em .75em;
+    margin:0 2px;
+    border:1px solid silver;
+}
+legend{
+    padding:.5em;
+    border:0;
+    width:auto;
+    font-size:16px;
+    margin-bottom: 0px;
+}
+
+.btn.focus, .btn:focus, .btn:hover{
+    color:#fff;
+}
+.sel{ height: 30px; line-height: 30px; border: 1px solid #e3e3e3; border-radius: 2px;}
+
+/*-有边框按钮-*/
+
+/*-有背景按钮-*/
+.btn_search1{ border:1px solid #4d91fe;  background: #4d91fe; color:#fff}
+.btn_add1{ border:1px solid #e2971f;  background: #e2971f; color:#fff}
+.btn_check1{ border:1px solid #1b5a7a;  background: #1b5a7a; color:#fff}
+.btn_delete1{ border:1px solid #011d4f;  background: #011d4f; color:#fff}
+.fa_icon_white{ color:#fff; font-size:14px}
+
+/*-表格-*/
+.tab_con{ background:#e3e3e3; border:1px solid #e3e3e3;}
+.t_top{ background:#e3e3e3; border-bottom:2px solid #c5c5c5; font-weight:bold;}
+.table-striped>tbody>tr:nth-of-type(odd){ background:#fff}
+.tab_con>tbody>tr>td,.tab_con>thead>tr>td{border:1px solid #ccc;}
+.table_hover{ background:#e3e3e3;}
+.fa_icon{ padding:0px 5px; color:#666;}
+
+/*-表格-*/
+
+/**************修改错误提示*****************/
+ .k-invalid-msg
+ {
+     display: none !important;
+ }
+
+.k-invalid
+{
+    border: 1px solid red;
+}
+.k-widget > span.k-invalid,
+input.k-invalid
+{
+    border: 1px solid red !important;
+ }
+ input:required:invalid, input:focus:invalid {
+    -moz-box-shadow: none;
+}
+.invalid {
+    color: red;
+}
+.k-tooltip{
+    min-width:120px;
+    border-radius: 5px;
+}
+/**************修改错误提示*****************/
+/***************bootstrap**************/
+.form-control{
+    font-size: 12px;
+    height:29px;
+    border-radius:2px;
+}
+.input-group-addon{
+    padding:3px 12px;
+}
+
+/***************修改弹出窗口的title   start***********************/
+.k-window-titlebar{
+    background-color:#095da5;
+    border-radius:2px 2px 0px 0px;
+}
+div.k-window{
+    border:0px;
+    border-radius:2px;
+}
+.k-block, .k-draghandle, .k-inline-block{
+    border:0px;
+}
+.k-window-title{
+    color:#fff;
+}
+/***************修改弹出窗口的title    end**********************/
+
+/*******       修改日期样式  start*************/
+.k-list-container {
+    border-color: #ccc;
+    overflow: auto;
+}
+.k-datetimepicker .k-select {
+    width: 3em;
+}
+
+.k-datetimepicker .k-picker-wrap {
+    padding-right: 0px;
+}
+
+.k-datetimepicker {
+    width: 12.8em;
+}
+.k-datetimepicker .k-picker-wrap .k-icon{
+    margin:0px 1px;
+}
+/*******       修改日期样式  end*************/
+.k-dropdown,.k-textbox,.k-numerictextbox{
+    width:100%;
+}
+.k-state-border-up{
+    height: auto;
+}
+.shadow_none{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.k-numeric-wrap.k-state-default .k-input{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.chart_time{
+    border-bottom: 1px solid #999;
+   /* min-height: 196px;*/
+}
+.relation_data {
+    background:#fff;
+    min-height: 515px;
+}
+.top_10{
+    background: #fff;
+    min-height: 290px;
+}
+.top_10 img,.relation_data1 img{
+    width: 100%;
+}
+.relation_data1{
+    min-height: 500px;
+}
+
+.check_logo{
+    min-height: 100px;
+}
+/***********************修改tooltip******************************/
+.k-widget.k-tooltip{
+    /*background-image: none,linear-gradient(to bottom,rgba(255,255,255,.6) 0,rgba(255,255,255,0) 100%);*/
+    background-position: 50% 50%;
+    background-color: #d45252;
+    color:#313131;
+    min-height: 16px;
+    top: 8px;
+    position: absolute;
+    /*border-color: transparent;
+    box-shadow: 0 4px 6px rgba(0,0,0,.3);*/
+}
+.k-callout-s{
+    border-bottom-color: #eae8e8;
+    color:#fff;
+}
+.k-callout-n{
+    border-bottom-color: #d45252;
+    color:#fff;
+}
+.k-animation-container{
+    width: 260px;
+    height: 10px;
+    overflow: visible;
+    display: block;
+    position: absolute;
+    top: 140px;
+    z-index: 10002;
+    left: 804.578px;
+}
+.k-widget.k-tooltip,.k-tooltip-validation .k-callout-n {
+    color:#fff;
+}
+input.k-textbox {
+    height: 2.4em;
+}
+.source-table-list{
+    border: 1px solid #cccccc;
+    height: 200px;
+    overflow-y: auto;
+}
+.source-table-list ul{
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    padding-left: 0px;
+}
+.source-table-list ul li{
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.source-table-list ul li:HOVER{
+    background-color: #095DA5;
+    color: #ffffff;
+}
+.source-table-list-li-active{
+    background-color: #095DA5;
+    color: #ffffff;
+}
+
+
+.source-table-field{
+    width: 99%;
+    border: none;
+    border-spacing:0;
+    border-collapse:collapse;
+}
+.source-table-field tr:HOVER{
+     background-color: #F5F5F5;
+ }
+.source-table-field tr:nth-child(even){
+    background-color: #F5F5F5;
+}
+.source-table-field th{
+    border: 1px solid #DDDDDD;
+    padding: 7px;
+}
+.source-table-field td{
+    border: 1px solid #DDDDDD;
+    padding:10px 7px;
+}

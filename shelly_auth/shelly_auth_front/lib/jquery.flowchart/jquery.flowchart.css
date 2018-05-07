@@ -1,0 +1,344 @@
+
+
+.flowchart-container1 {
+    position: relative;
+    overflow: auto;
+}
+.flowchart-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.flowchart-links-layer, .flowchart-operators-layer, .flowchart-temporary-link-layer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.flowchart-operators-layer, .flowchart-temporary-link-layer {
+    pointer-events: none;
+}
+
+.flowchart-temporary-link-layer {
+    display: none;
+}
+
+
+
+.flowchart-link, .flowchart-operator {
+    cursor: default;
+}
+
+
+.flowchart-operator-connector {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.flowchart-operator-connector-label {
+    font-size: small;
+}
+
+.flowchart-operator-inputs .flowchart-operator-connector-label {
+    margin-left: 14px;
+}
+
+.flowchart-operator-outputs .flowchart-operator-connector-label {
+    text-align: right;
+    margin-right: 5px;
+}
+
+.flowchart-operator-connector-arrow {
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgb(204, 204, 204);
+    position: absolute;
+}
+
+.flowchart-operator-connector-small-arrow {
+    width: 0px;
+    height: 0px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent; /*rgb(100, 100, 100);*/
+    position: absolute;
+    top: 0px;
+    pointer-events: none;
+}
+
+.flowchart-operator-connector:hover .flowchart-operator-connector-arrow {
+    border-left: 10px solid rgb(153, 153, 153);
+}
+
+.flowchart-operator-inputs .flowchart-operator-connector-arrow {
+    left: -11px;
+}
+
+.flowchart-operator-outputs .flowchart-operator-connector-arrow {
+    right: -11px;
+}
+
+.flowchart-operator-inputs .flowchart-operator-connector-small-arrow {
+    left: -9px;
+}
+
+.flowchart-operator-outputs .flowchart-operator-connector-small-arrow {
+    right: -8px;
+}
+
+.unselectable {
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
+
+/* Default Operator */
+
+.flowchart-operator {
+    position: absolute;
+    width: 140px;
+    border: 1px solid #1b5a7a;
+    background: #1b5a7a;
+    pointer-events: initial;
+    border-radius: 3px;
+}
+
+.flowchart-operator.selected {
+   /* box-shadow: 1px 1px 5px #999;*/
+    background: #E48466;
+     border: 1px solid #E48466;
+}
+.flowchart-operator.selected .flowchart-operator-title{
+    background: #E48466;
+    /*border: 1px solid #E48466;*/
+}
+.flowchart-decide-operator.selected::before{
+    border-right:30px solid #E48466;
+}
+.flowchart-decide-operator.selected::after{
+    border-left:30px solid #E48466;
+}
+.flowchart-operator .flowchart-operator-title {
+    font-weight: bold;
+    box-sizing: border-box;
+     color: #fff;
+     text-align: center;
+    background: #1b5a7a;
+    /*overflow: hidden;
+     white-space: nowrap;*/
+    text-overflow: ellipsis;
+    cursor: move;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    word-break:normal;
+    word-wrap:break-word;
+}
+
+.flowchart-operator .flowchart-operator-inputs-outputs {
+    display: table;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.flowchart-operator .flowchart-operator-inputs, .flowchart-default-operator .flowchart-operator-outputs {
+    display: table-cell;
+    width: 50%;
+}
+.flowchart-start-operator .flowchart-operator-inputs-outputs{
+    width:100%;
+    margin: 0px;
+}
+.flowchart-start-operator .flowchart-operator-connector{
+    padding: 0px;
+}
+.flowchart-process-operator .flowchart-operator-title{
+    padding:3px;
+}
+.flowchart-process-operator .flowchart-operator-connector-arrow,.flowchart-process-operator .flowchart-operator-connector-arrow{
+    top:-6px;
+}
+.flowchart-process-operator .flowchart-operator-connector-small-arrow,.flowchart-process-operator .flowchart-operator-connector-small-arrow{
+    top:-1px;
+}
+.flowchart-decide-operator{
+    width: 55px;
+    height: 71px;
+    margin: 100px auto;
+    /*position: relative;*/
+    background-color: #1b5a7a;
+}
+.flowchart-decide-operator::before{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -30px;
+    top: 0;
+    border-right: 30px solid #1b5a7a;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent
+}
+.flowchart-decide-operator::after{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: -30px;
+    top: 0;
+    border-left: 30px solid #1b5a7a;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+}
+.flowchart-decide-operator .flowchart-operator-inputs .flowchart-operator-connector-arrow{
+    border:10px solid rgb(204, 204, 204);
+    border-color:transparent transparent transparent rgb(204, 204, 204);
+    top:-45px;
+}
+.flowchart-decide-operator .flowchart-operator-inputs .flowchart-operator-connector-small-arrow{
+    border:5px solid rgb(204, 204, 204);
+    border-color:transparent transparent transparent rgb(204, 204, 204);
+    top:-40px;
+}
+.flowchart-decide-operator .flowchart-operator-inputs .flowchart-operator-connector-arrow{
+    left:-40px;
+}
+.flowchart-decide-operator .flowchart-operator-inputs .flowchart-operator-connector-small-arrow{
+    left:-38px;
+}
+.flowchart-decide-operator .flowchart-operator-outputs .flowchart-operator-connector-arrow{
+    border:10px solid rgb(204, 204, 204);
+    border-color:transparent transparent transparent rgb(204, 204, 204);
+    top:-45px;
+}
+.flowchart-decide-operator .flowchart-operator-outputs .flowchart-operator-connector-small-arrow{
+    border:5px solid rgb(204, 204, 204);
+    border-color:transparent transparent transparent rgb(204, 204, 204);
+    top:-40px;
+}
+.flowchart-decide-operator .flowchart-operator-connector{
+    padding:0px;
+
+}
+.flowchart-decide-operator .flowchart-operator-outputs .flowchart-operator-connector-small-arrow{
+    right: -42px;
+}
+.flowchart-decide-operator .flowchart-operator-outputs .flowchart-operator-connector-arrow{
+    right:-50px;
+}
+.flowchart-decide-operator .flowchart-operator-title,.flowchart-start-operator .flowchart-operator-title,.flowchart-end-operator .flowchart-operator-title{
+    background-color: inherit;
+    border:0px;
+    height: 65px;
+    padding:5px 0px;
+}
+.flowchart-start-operator ,.flowchart-end-operator{
+    height:40px;
+    width:80px;
+    -moz-border-radius:40px/20px;
+    -webkit-border-radius:40px/20px;
+    border-radius:40px/20px;
+}
+.flowchart-start-operator .flowchart-operator-title,.flowchart-end-operator .flowchart-operator-title{
+    width: 82%;
+    margin: 11px 6px 11px 6px;
+    text-align: center;
+    height: auto;
+    padding: 0px;
+}
+.flowchart-start-operator .flowchart-operator-connector-arrow,
+.flowchart-end-operator .flowchart-operator-connector-arrow{
+    top:-30px;
+}
+.flowchart-start-operator .flowchart-operator-connector-small-arrow,
+.flowchart-end-operator .flowchart-operator-connector-small-arrow{
+    top:-25px;
+}
+.rectangle{
+    width:80px;
+    height:30px;
+}
+.rectangle:before{
+    content: "";
+    display: inline-block;
+    background: #1b5a7a;
+    width: 15px;
+    height: 10px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+.diamond{
+    width:80px;
+    height:30px;
+}
+.diamond:before{
+    content: "";
+    display: inline-block;
+    background: #1b5a7a;
+     width: 10px;
+     height: 10px;
+    margin-right: 5px;
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+.ovalHor{
+    height:30px;
+    width:80px;
+    /*-moz-border-radius:30px/15px;
+    -webkit-border-radius:30px/15px;
+    border-radius:30px/15px;*/
+}
+.ovalHor:before{
+    content: "";
+      display: inline-block;
+     background: #1b5a7a;
+     width: 15px;
+     height: 10px;
+     border-radius: 10px/7px;
+     margin-right: 5px;
+
+}
+.tool-btn{
+    margin: 0px 5px;
+    text-align: center;
+    padding:5px 0px;
+    cursor: pointer;
+}
+.tool-btn2,.tool-btn2:hover{
+    color:#000;
+    background: #FAFAFA;
+    border:1px solid #cccccc;
+    font-weight: bold;
+}
+.mg{
+    margin: 10px 5px 0px 5px;
+}
+.del_btn {
+    background: #3879D9;
+    border: 1px solid #3879D9;
+    line-height: 29px;
+    padding: 0px 19px;
+     margin-left: 15%;
+     color: #fff;
+}
+.fa_icon_gray{
+     color: #FFF;
+}
